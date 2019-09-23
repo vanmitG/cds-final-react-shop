@@ -7,6 +7,7 @@ import NavBarTop from "./components/NavBarTop"
 import NaviBar from "./components/NaviBar"
 import NewsLetter from "./components/NewsLetter"
 import Partners from "./components/Partners"
+import Routes from './pages/Routes'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <NaviBar />
       <div className="clearfix" />
       <SearchBar />
+      <Routes />
       <Partners />
       <NewsLetter />
       <FooterTop />

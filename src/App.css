@@ -1,3 +1,7 @@
-.App {
+/* .App {
   text-align: center;
+} */
+
+.callbacks_container {
+  display: block !important;
 }

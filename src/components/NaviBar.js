@@ -1,18 +1,23 @@
 import React, { Component } from 'react'
+import { Link, NavLink } from "react-router-dom";
 
 export default class NaviBar extends Component {
   render() {
     return (
-
       <nav className="navbar navbar-expand-lg navbar-dark bg-white">
-        <div className="container"> <a className="navbar-brand" href="#"> <img src="template/assets/images/logo.png" alt="" title className="img-fluid" /> </a>
+        <div className="container"> <a className="navbar-brand" href="/"> <img src="template/assets/images/logo.png" alt="" title className="img-fluid" /> </a>
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span className="navbar-toggler-icon" /> <span className="navbar-toggler-icon" /> <span className="navbar-toggler-icon" /> </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav">
-              <li className="nav-item dropdown"> <a className="nav-link dropdown-toggle" href="#" id="Dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Home </a>
-                <div className="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="Dropdown1"> <a className="dropdown-item" href="#">Home</a> <a className="dropdown-item" href="#">Home v2</a> <a className="dropdown-item" href="#">Home v3</a> <a className="dropdown-item" href="left-side-menu.html">left Side Menu</a> <a className="dropdown-item" href="menu-2.html">Mega Menu</a> </div>
+              {/* Home Start */}
+              <li className="nav-item dropdown"> <Link className="nav-link dropdown-toggle" to="/" id="Dropdown3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Home </Link>
+                <div className="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="Dropdown3">
+                  <h5>Organic Store Information</h5>
+                  <Link className="dropdown-item" to="/home">Home</Link> <Link className="dropdown-item" to="/about">About Us</Link> <Link className="dropdown-item" to="/term_and_condition">Terms And Conditions</Link> <Link className="dropdown-item" to="/contact">Contact Us</Link> </div>
               </li>
-              <li className="nav-item dropdown megamenu-li"> <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> SHOP </a>
+              {/* Home End */}
+
+              <li className="nav-item dropdown megamenu-li"> <Link className="nav-link dropdown-toggle" to="/shops" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> SHOP </Link>
                 <div className="dropdown-menu megamenu animate slideIn">
                   <div className="row">
                     <div className="col-sm-6 col-lg-4">
@@ -25,11 +30,11 @@ export default class NaviBar extends Component {
                       <h5>Shop</h5>
                       <a className="dropdown-item" href="shop-filter.html">Shop Top filter</a> <a className="dropdown-item" href="single_product.html">Product Detail</a> <a className="dropdown-item" href="single_product-2.html">Product Detail V2</a> </div>
                     <div className="clearfix" />
-                    <div className="col-md-12">
+                    {/* <div className="col-md-12">
                       <hr />
                     </div>
                     <div className="col-md-6"><img src="template/assets/images/page-img/menu-img.jpg" alt="" title className="img-fluid" /></div>
-                    <div className="col-md-6"><img src="template/assets/images/page-img/menu2-img.jpg" alt="" title className="img-fluid" /></div>
+                    <div className="col-md-6"><img src="template/assets/images/page-img/menu2-img.jpg" alt="" title className="img-fluid" /></div> */}
                   </div>
                 </div>
               </li>
@@ -52,11 +57,13 @@ export default class NaviBar extends Component {
                   </div>
                 </div>
               </li>
+              {/* BlogStart */}
               <li className="nav-item dropdown"> <a className="nav-link dropdown-toggle" href="#" id="Dropdown3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Blog </a>
                 <div className="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="Dropdown3">
                   <h5>Blog Pages</h5>
                   <a className="dropdown-item" href="blog-left-sidebar.html">Blog Left Sidebar</a> <a className="dropdown-item" href="blog-right-sidebar.html">Blog Right Sidebar</a> <a className="dropdown-item" href="blog-w-o-sidebar.html">Blog Without Sidebar</a> <a className="dropdown-item" href="blog-details.html">Blog Details</a> </div>
               </li>
+              {/* /BlogEnd */}
               <li className="nav-item dropdown megamenu-li"> <a className="nav-link dropdown-toggle" href="#" id="Dropdown4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Pages </a>
                 <div className="dropdown-menu megamenu animate slideIn">
                   <div className="row">
