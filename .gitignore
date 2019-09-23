@@ -4,10 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
-/public/template/*.html
+
+/template/html
 
 /TempK
-
+note.txt
 # testing
 /coverage
 

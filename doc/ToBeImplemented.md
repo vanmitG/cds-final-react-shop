@@ -25,9 +25,8 @@
 - [] User can receive order in form of pending order when customer submit checkout
 - [] User can mark order complete when recieve payment
 - [] User can issue invoice when recieve payment
--
 - [] User can see sales amount of each product
-- [] User can see total sale base on
+- [] User can see total sale base on day/week/month
 
 &ensp;&ensp;&ensp;&ensp;_Blogs feature_
 
