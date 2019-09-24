@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-
+import { Redirect } from 'react-router-dom'
 export default class ForgotPassword extends Component {
   render() {
     return (
-      <div>
-        <h1>ForgotPassword Pages</h1>
-      </div>
+      <Redirect to={{
+        pathname: '/comming_soon',
+        state: { page: 'Forgot Password' }
+      }}
+      />
     )
   }
 }

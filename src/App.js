@@ -13,7 +13,7 @@ import Routes from './pages/Routes'
 function App() {
   return (
     <>
-      <NavBarTop />
+      {/* <NavBarTop />
       <div className="clearfix" />
       <NaviBar />
       <div className="clearfix" />
@@ -22,7 +22,14 @@ function App() {
       <Partners />
       <NewsLetter />
       <FooterTop />
+      <Footer /> */}
+      {/* Navigation */}
+      <NaviBar />
+      {/* Navigation */}
+      <Routes />
+      {/* Footer */}
       <Footer />
+      {/* /Footer */}
     </>
   );
 }
