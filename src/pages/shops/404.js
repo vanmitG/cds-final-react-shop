@@ -23,20 +23,8 @@ export default class Error404 extends Component {
               <span>either something went wrong or the page doesn't exist
               anymore.</span>
             </div>
-            <div className="agile-home">
-              {/*728x90*/}
-              <from>
-                <div className="agile-back">
-                  <button className="submit" onClick=""><a href="/home">back home</a>
 
-                  </button>
-                </div>
-              </from>
-            </div>
-            <div className="copy-right2">
-              <p>Copyright © 2019 Organic Store - All Rights Reserved.</p>
-            </div>
-            <div className="clear" />
+            <div className="clearfix" />
           </section>
         </div>
       </div>

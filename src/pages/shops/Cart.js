@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-
+import { Redirect } from 'react-router-dom'
 export default class Cart extends Component {
   render() {
     return (
       <div>
-        <h1>Cart Pages</h1>
+        <Redirect to={{
+          pathname: '/comming_soon',
+          state: { page: 'Shopping Cart' }
+        }}
+        />
       </div>
     )
   }
