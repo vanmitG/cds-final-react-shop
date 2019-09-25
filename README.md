@@ -10,14 +10,21 @@ This is a simple e-commerce front-end application built using [create-react-app]
 
 - [x] User can browse the application using navigation bar.
 - [x] If page not found, user will be redirect to a 404 page.
+- [x] If page is unfinish, user will be redirect to comming soon page
 - [x] The following pages is included:
   - [x] Home (landing page)
+  - [x] About, contact, faq, term and conditon.
 
 ### The following _features_ are **to be implemented** :
 
+- [] Users can see a list of products
+- [] Users can go to a single product information pages
+- [] User can filter products listed base on catergory
+- [] Users can add product to cart which display product, quantity and total sum of Users's order
+- [] Users can edit/delete product from carts
+- [] Users can checkout products and receive a confirmation of order when submit.
 - [] The following pages is to be included:
 
-  - [] About, contact, faq, term and conditon.
   - [] Product list (shops), single product.
   - [] Carts, checkout, wish list.
   - [] Register, login, my account, forgot password
