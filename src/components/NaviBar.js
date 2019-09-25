@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link, NavLink } from "react-router-dom";
-
+import cartTop from "./cartTop"
 export default class NaviBar extends Component {
   render() {
     return (
@@ -18,6 +18,7 @@ export default class NaviBar extends Component {
               </div>
               <div className="col-lg-7 col-md-6 col-md-12 position-relative">
                 <div className="right-div">
+                  {/* for small size screen */}
                   <ul>
                     <li>
                       <ul className="social-network">
@@ -49,9 +50,9 @@ export default class NaviBar extends Component {
                       <div className="rate-price rate-price2">
                         <ul>
                           <li className="dropdown"> <a className="dropdown-toggle" href="#" data-toggle="dropdown"> <i className="fa fa-user-circle-o" aria-hidden="true" /></a>
-                            <div className="dropdown-menu dropdown-menu-right animate slideIn"> <a className="dropdown-item" href="/login">Login</a> <a className="dropdown-item" href="/my_account">My Account</a> <a className="dropdown-item" href="/register">Register</a> <a className="dropdown-item" href="/forgot_password">Forgot Password</a> </div>
+                            <div className="dropdown-menu dropdown-menu-right animate slideIn"> <Link className="dropdown-item" to="/login">Login</Link> <Link className="dropdown-item" to="/my_account">My Account</Link> <Link className="dropdown-item" to="/register">Register</Link> <Link className="dropdown-item" to="/forgot_password">Forgot Password</Link> </div>
                           </li>
-                          <li><a href="/wish_list"><i className="fa fa-heart-o" aria-hidden="true" /><span className="circle-2">1</span></a></li>
+                          <li><Link to="/wish_list"><i className="fa fa-heart-o" aria-hidden="true" /><span className="circle-2">1</span></Link></li>
                           <li className="dropdown"> <a className="dropdown-toggle link" href="#" data-toggle="dropdown"><i className="fa fa-shopping-bag" aria-hidden="true" /><span className="circle-2">1</span></a>
                             <div className="dropdown-menu dropdown-menu2 dropdown-menu-right  animate slideIn">
                               <div className="container">
@@ -99,7 +100,7 @@ export default class NaviBar extends Component {
                                     <hr />
                                   </div>
                                   <div className="col-md-12 text-center">
-                                    <input type="button" defaultValue="Check out" className="btn check-out w-100" />
+                                    <Link to="/checkout" type="button" className="btn check-out w-100">checkout</Link>
                                   </div>
                                 </div>
                               </div>
@@ -116,31 +117,31 @@ export default class NaviBar extends Component {
         </div>
         <div className="clearfix" />
         <nav className="navbar navbar-expand-lg navbar-dark bg-white">
-          <div className="container"> <a className="navbar-brand" href="/"> <img src="/assets/images/logo.png" alt="" title className="img-fluid" /> </a>
+          <div className="container"> <a className="navbar-brand" href="/"> <img src="/assets/images/logo.png" alt="" title="" className="img-fluid" /> </a>
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span className="navbar-toggler-icon" /> <span className="navbar-toggler-icon" /> <span className="navbar-toggler-icon" /> </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav">
                 <li className="nav-item dropdown"> <a className="nav-link dropdown-toggle" href="#" id="Dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Home </a>
-                  <div className="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="Dropdown1"> <a className="dropdown-item" href="/"><Link to="/home">Home</Link></a> <a className="dropdown-item" href="/about"><Link to="/about">About Us</Link></a> <a className="dropdown-item" href="/faq"><Link to="/faq">FAQ</Link></a> <a className="dropdown-item" href="/term_and_condition"><Link to="/term_and_condition">Terms And Conditions</Link></a> <a className="dropdown-item" href="/contact"><Link to="/contact">Contact Us</Link></a> </div>
+                  <div className="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="Dropdown1"><Link className="dropdown-item" to="/home">Home</Link> <Link className="dropdown-item" to="/about">About Us</Link> <Link className="dropdown-item" to="/faq">FAQ</Link> <Link className="dropdown-item" to="/term_and_condition">Terms And Conditions</Link> <Link className="dropdown-item" to="/contact">Contact Us</Link> </div>
                 </li>
                 <li className="nav-item dropdown megamenu-li"> <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> SHOPS </a>
                   <div className="dropdown-menu megamenu animate slideIn">
                     <div className="row">
                       <div className="col-sm-6 col-lg-4">
                         <h5>Organic Stores</h5>
-                        <a className="dropdown-item" href="/shops">CDS-Ecom</a> <a className="dropdown-item" href="/shops">Another Awesome Shop</a> <a className="dropdown-item" href="/comming_soon">Another Wonderful Shop</a> <a className="dropdown-item" href="/comming_soon">Shop 4</a> <a className="dropdown-item" href="/comming_soon">Shop 5</a> </div>
+                        <Link className="dropdown-item" to="/shops">CDS-Ecom</Link> <Link className="dropdown-item" to="/shops">Another Awesome Shop</Link> <Link className="dropdown-item" to="/comming_soon">Another Wonderful Shop</Link> <Link className="dropdown-item" to="/comming_soon">Shop 4</Link> <Link className="dropdown-item" to="/comming_soon">Shop 5</Link> </div>
                       <div className="col-sm-6 col-lg-4">
                         <h5>Dietary Supplement Stores</h5>
-                        <a className="dropdown-item" href="/shops">Kunni Stores</a> <a className="dropdown-item" href="/shops">Kinni Stores</a> <a className="dropdown-item" href="/shops">Monni Stores</a> <a className="dropdown-item" href="/comming_soon">Shop 4</a> <a className="dropdown-item" href="/comming_soon">Shop 5</a> </div>
+                        <Link className="dropdown-item" to="/shops">Kunni Stores</Link> <Link className="dropdown-item" to="/shops">Kinni Stores</Link> <Link className="dropdown-item" to="/shops">Monni Stores</Link> <Link className="dropdown-item" to="/comming_soon">Shop 4</Link> <Link className="dropdown-item" to="/comming_soon">Shop 5</Link> </div>
                       <div className="col-sm-6 col-lg-4">
                         <h5>Natural Herbs</h5>
-                        <a className="dropdown-item" href="/comming_soon">Top Shop</a> <a className="dropdown-item" href="/comming_soon">Shop 2</a> <a className="dropdown-item" href="/comming_soon">Shop 3</a> </div>
+                        <Link className="dropdown-item" to="/comming_soon">Top Shop</Link> <Link className="dropdown-item" to="/comming_soon">Shop 2</Link> <Link className="dropdown-item" to="/comming_soon">Shop 3</Link> </div>
                       <div className="clearfix" />
                       <div className="col-md-12">
                         <hr />
                       </div>
-                      <div className="col-md-6"><img src="/assets/images/page-img/menu-img.jpg" alt="" title className="img-fluid" /></div>
-                      <div className="col-md-6"><img src="/assets/images/page-img/menu2-img.jpg" alt="" title className="img-fluid" /></div>
+                      <div className="col-md-6"><img src="/assets/images/page-img/menu-img.jpg" alt="" title="" className="img-fluid" /></div>
+                      <div className="col-md-6"><img src="/assets/images/page-img/menu2-img.jpg" alt="" title="" className="img-fluid" /></div>
                     </div>
                   </div>
                 </li>
@@ -149,13 +150,13 @@ export default class NaviBar extends Component {
                     <div className="row">
                       <div className="col-sm-6 col-lg-3">
                         <h5>Dried Fruits</h5>
-                        <a className="dropdown-item" href="/comming_soon">Almond</a> <a className="dropdown-item" href="/comming_soon">Apricot</a> <a className="dropdown-item" href="/comming_soon">Arrowroot</a> <a className="dropdown-item" href="/comming_soon">Cantaloupe </a> <a className="dropdown-item" href="/comming_soon">Cashew</a> </div>
+                        <Link className="dropdown-item" to="/comming_soon">Almond</Link> <Link className="dropdown-item" to="/comming_soon">Apricot</Link> <Link className="dropdown-item" to="/comming_soon">Arrowroot</Link> <Link className="dropdown-item" to="/comming_soon">Cantaloupe </Link> <Link className="dropdown-item" to="/comming_soon">Cashew</Link> </div>
                       <div className="col-sm-6 col-lg-3">
                         <h5>Fruits</h5>
-                        <a className="dropdown-item" href="/comming_soon">Apples</a> <a className="dropdown-item" href="/comming_soon">Apricots</a> <a className="dropdown-item" href="/comming_soon">Bananas</a> <a className="dropdown-item" href="/comming_soon">Cantaloupe</a> <a className="dropdown-item" href="/comming_soon">Cherry</a> </div>
+                        <Link className="dropdown-item" to="/comming_soon">Apples</Link> <Link className="dropdown-item" to="/comming_soon">Apricots</Link> <Link className="dropdown-item" to="/comming_soon">Bananas</Link> <Link className="dropdown-item" to="/comming_soon">Cantaloupe</Link> <Link className="dropdown-item" to="/comming_soon">Cherry</Link> </div>
                       <div className="col-sm-6 col-lg-3">
                         <h5>Juice</h5>
-                        <a className="dropdown-item" href="/comming_soon">Sugarcane </a> <a className="dropdown-item" href="/comming_soon">Wheatgrass</a> <a className="dropdown-item" href="/comming_soon">Arrowroot</a> <a className="dropdown-item" href="/comming_soon">Grapefruit</a> <a className="dropdown-item" href="/comming_soon">Otai</a> </div>
+                        <Link className="dropdown-item" to="/comming_soon">Sugarcane </Link> <Link className="dropdown-item" to="/comming_soon">Wheatgrass</Link> <Link className="dropdown-item" to="/comming_soon">Arrowroot</Link> <Link className="dropdown-item" to="/comming_soon">Grapefruit</Link> <Link className="dropdown-item" to="/comming_soon">Otai</Link> </div>
                       <div className="col-sm-6 col-lg-3">
                         <p><img src="/assets/images/page-img/menu3-img.jpg" alt="" title className="img-fluid" /></p>
                       </div>
@@ -166,18 +167,18 @@ export default class NaviBar extends Component {
                 <li className="nav-item dropdown"> <a className="nav-link dropdown-toggle" href="#" id="Dropdown3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Blog </a>
                   <div className="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="Dropdown3">
                     <h5>Blogs / Products Reviews</h5>
-                    <a className="dropdown-item" href="/blogs"><Link to="/blogs">All Blogs</Link></a> <a className="dropdown-item" href="/comming_soon">My Blogs</a> <a className="dropdown-item" href="/comming_soon">Organic News</a> </div>
+                    <Link className="dropdown-item" to="/blogs">All Blogs</Link> <Link className="dropdown-item" to="/comming_soon">My Blogs</Link> <Link className="dropdown-item" to="/comming_soon">Organic News</Link> </div>
                 </li>
                 <li className="nav-item dropdown megamenu-li"> <a className="nav-link dropdown-toggle" href="#" id="Dropdown4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Pages </a>
                   <div className="dropdown-menu megamenu animate slideIn">
                     <div className="row">
                       <div className="col-sm-6 col-lg-4">
                         <h5>My Account</h5>
-                        <a className="dropdown-item" href="/login">Login</a> <a className="dropdown-item" href="/my_account">My Account</a> <a className="dropdown-item" href="/register">Register</a> <a className="dropdown-item" href="/forgot_password">Forgot Password</a> </div>
+                        <Link className="dropdown-item" to="/login">Login</Link> <Link className="dropdown-item" to="/my_account">My Account</Link> <Link className="dropdown-item" to="/register">Register</Link> <Link className="dropdown-item" to="/forgot_password">Forgot Password</Link> </div>
                       <div className="col-sm-6 col-lg-4">
                         <h5>Quick Links</h5>
-                        <a className="dropdown-item" href="/cart">Cart</a> <a className="dropdown-item" href="/wish_list">Wish Lists</a> <a className="dropdown-item" href="gift-card.html">Gift Card</a> <a className="dropdown-item" href="wishlist.html">Wishlist</a> <a className="dropdown-item" href="checkout.html">Checkout</a> <a className="dropdown-item" href="contact.html">Contact</a> <a className="dropdown-item" href="404.html">404 Error</a> <a className="dropdown-item" href="comingsoon.html">Coming soon</a> </div>
-                      <div className="col-sm-6 col-lg-4"> <a className="dropdown-item" href="about-us.html">About Us</a> <a className="dropdown-item" href="terms-conditions.html">Terms Conditions</a> <a className="dropdown-item" href="faq.html">FAQ</a> </div>
+                        <Link className="dropdown-item" to="/cart">Cart</Link> <Link className="dropdown-item" to="/wish_list">Wish Lists</Link>  <Link className="dropdown-item" to="/checkout">Checkout</Link> </div>
+                      <div className="col-sm-6 col-lg-4"> <Link className="dropdown-item" to="/about">About Us</Link> <Link className="dropdown-item" to="/term_and_condition">Terms Conditions</Link> <Link className="dropdown-item" to="/faq">FAQ</Link><Link className="dropdown-item" to="/contact">Contact</Link> </div>
                     </div>
                   </div>
                 </li>
@@ -185,9 +186,9 @@ export default class NaviBar extends Component {
               <div className="rate-price nav-1">
                 <ul>
                   <li className="dropdown"> <a className="dropdown-toggle" href="#" data-toggle="dropdown"> <i className="fa fa-user-circle-o" aria-hidden="true" /></a>
-                    <div className="dropdown-menu dropdown-menu-right animate slideIn"> <a className="dropdown-item" href="login.html">Login</a> <a className="dropdown-item" href="my-account.html">My Account</a> <a className="dropdown-item" href="register.html">Register</a> <a className="dropdown-item" href="forgot-password.html">Forgot Password</a> </div>
+                    <div className="dropdown-menu dropdown-menu-right animate slideIn"> <Link className="dropdown-item" to="/login">Login</Link> <Link className="dropdown-item" to="/my_account">My Account</Link> <Link className="dropdown-item" to="/register">Register</Link> <Link className="dropdown-item" to="/forgot_password">Forgot Password</Link> </div>
                   </li>
-                  <li><a href="wishlist.html"><i className="fa fa-heart-o" aria-hidden="true" /><span className="circle-2">1</span></a></li>
+                  <li><Link to="/wish_list"><i className="fa fa-heart-o" aria-hidden="true" /><span className="circle-2">1</span></Link></li>
                   <li className="dropdown"> <a className="dropdown-toggle link" href="#" data-toggle="dropdown"><i className="fa fa-shopping-bag" aria-hidden="true" /><span className="circle-2">1</span></a>
                     <div className="dropdown-menu dropdown-menu2 dropdown-menu-right animate slideIn">
                       <div className="container">
