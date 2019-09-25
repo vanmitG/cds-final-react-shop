@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-
+import {Redirect} from 'react-router-dom'
 export default class BlogSingle extends Component {
   render() {
     return (
       <div>
-        <h1>Single Blog Pags</h1>
+        <Redirect to={{
+        pathname: '/comming_soon',
+        state: { page: 'Single Blog' }
+      }}
+      />
       </div>
     )
   }
