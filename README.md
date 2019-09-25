@@ -10,10 +10,14 @@ This is a simple e-commerce front-end application built using [create-react-app]
 
 - [x] User can browse the application using navigation bar.
 - [x] If page not found, user will be redirect to a 404 page.
-- [x] If page is unfinish, user will be redirect to comming soon page
-- [x] The following pages is included:
+- [x] If page is unfinished, user will be redirected to a comming soon page
+- [x] The following pages is included with static content:
   - [x] Home (landing page)
   - [x] About, contact, faq, term and conditon.
+  - [x] Product list (shops), single product.
+  - [x] Carts, checkout, wish list.
+  - [x] Register, login, my account, forgot password
+  - [x] Blogs, single blog.
 
 ### The following _features_ are **to be implemented** :
 
@@ -23,7 +27,7 @@ This is a simple e-commerce front-end application built using [create-react-app]
 - [] Users can add product to cart which display product, quantity and total sum of Users's order
 - [] Users can edit/delete product from carts
 - [] Users can checkout products and receive a confirmation of order when submit.
-- [] The following pages is to be included:
+- [] The following pages is to be included with dynamic content:
 
   - [] Product list (shops), single product.
   - [] Carts, checkout, wish list.
@@ -34,7 +38,7 @@ This is a simple e-commerce front-end application built using [create-react-app]
 
 ## Time Spent and Lessons Learned
 
-Time spent: **4** hours spent in total.
+Time spent: **12** hours spent in total.
 
 Describe any challenges encountered while building the app.
 
