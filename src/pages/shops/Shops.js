@@ -2,6 +2,91 @@ import React, { Component } from 'react'
 // import { Redirect } from 'react-router-dom'
 import BreadCrumb from '../../components/BreadCrumb'
 
+const SideBar = () => {
+  return (
+    <div className="col-lg-3 col-md-12 col-sm-12">
+      <div className="inner-left-menu">
+        <h3>Departments</h3>
+        <div className="list-css">
+          <ul>
+            <li><a href="shop.html">Fresh Fruits</a></li>
+            <li><a href="shop.html">Fruit &amp; Nut Gifts</a></li>
+            <li><a href="shop.html">Ocean Foods</a></li>
+            <li><a href="shop.html">Butter &amp; Eggs</a></li>
+            <li><a href="shop.html">Fastfood</a></li>
+            <li><a href="shop.html">Fresh Onion</a></li>
+            <li><a href="shop.html">Papaya &amp; Crisps</a></li>
+            <li><a href="shop.html">Oatmeal</a></li>
+            <li><a href="shop.html">Fresh Bananas</a></li>
+          </ul>
+        </div>
+        <h3>Filter By Price</h3>
+        <div className="price-range-block">
+          <div id="slider-range" className="price-filter-range" />
+          <div className="row">
+            <div className="col-9 p-0">
+              <input type="number" min={0} max={9900} oninput="validity.valid||(value='0');" id="min_price" className="price-range-field" />
+              <input type="number" min={0} max={10000} oninput="validity.valid||(value='10000');" id="max_price" className="price-range-field" />
+            </div>
+            <div className="col-3 p-0">
+              <button type="button" className="btn btn-filter">Filter</button>
+            </div>
+          </div>
+          <br />
+        </div>
+        <h3>Popular Picks</h3>
+        <div className="list-css">
+          <ul>
+            <li>
+              {/* Default unchecked */}
+              <div className="custom-control custom-checkbox">
+                <input type="checkbox" className="custom-control-input" id="defaultUnchecked-1" />
+                <label className="custom-control-label" htmlFor="defaultUnchecked-1">Top Sales</label>
+              </div>
+            </li>
+            <li>
+              <div className="custom-control custom-checkbox">
+                <input type="checkbox" className="custom-control-input" id="defaultUnchecked-2" />
+                <label className="custom-control-label" htmlFor="defaultUnchecked-2">New Products</label>
+              </div>
+            </li>
+            <li>
+              <div className="custom-control custom-checkbox">
+                <input type="checkbox" className="custom-control-input" id="defaultUnchecked-3" />
+                <label className="custom-control-label" htmlFor="defaultUnchecked-3">Featured Products</label>
+              </div>
+            </li>
+            <li>
+              <div className="custom-control custom-checkbox">
+                <input type="checkbox" className="custom-control-input" id="defaultUnchecked-4" />
+                <label className="custom-control-label" htmlFor="defaultUnchecked-4">Bestsellers</label>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <h3>Product Tags</h3>
+        <div className="tag_bottom"><a className="tag-btn" href="#">organic</a><a className="tag-btn" href="shop_grid%2blist_3col.html">vegatable</a><a className="tag-btn" href="#">fruits</a><a className="tag-btn" href="#">fresh meat</a><a className="tag-btn" href="#">fastfood</a><a className="tag-btn" href="#">natural</a></div>
+      </div>
+    </div>
+  )
+}
+
+const ProductsListHeader = () => {
+  return (
+    <div className="right-heading">
+      <div className="row">
+        <div className="col-md-4 col-4">
+          <h3>Organic Shops</h3>
+        </div>
+        <div className="col-md-8 col-8">
+          <div className="product-filter">
+            <div className="view-method"> <a href="#" id="grid"><i className="fa fa-th-large" /></a> <a href="#" id="list"><i className="fa fa-list" /></a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 export default class Shops extends Component {
   render() {
     return (
@@ -10,85 +95,11 @@ export default class Shops extends Component {
         <div className="container">
           <BreadCrumb page='Organic Shops' />
           <div className="row">
-            <div className="col-lg-3 col-md-12">
-              <div className="inner-left-menu">
-                <h3>Departments</h3>
-                <div className="list-css">
-                  <ul>
-                    <li><a href="shop.html">Fresh Fruits</a></li>
-                    <li><a href="shop.html">Fruit &amp; Nut Gifts</a></li>
-                    <li><a href="shop.html">Ocean Foods</a></li>
-                    <li><a href="shop.html">Butter &amp; Eggs</a></li>
-                    <li><a href="shop.html">Fastfood</a></li>
-                    <li><a href="shop.html">Fresh Onion</a></li>
-                    <li><a href="shop.html">Papaya &amp; Crisps</a></li>
-                    <li><a href="shop.html">Oatmeal</a></li>
-                    <li><a href="shop.html">Fresh Bananas</a></li>
-                  </ul>
-                </div>
-                <h3>Filter By Price</h3>
-                <div className="price-range-block">
-                  <div id="slider-range" className="price-filter-range" />
-                  <div className="row">
-                    <div className="col-9 p-0">
-                      <input type="number" min={0} max={9900} oninput="validity.valid||(value='0');" id="min_price" className="price-range-field" />
-                      <input type="number" min={0} max={10000} oninput="validity.valid||(value='10000');" id="max_price" className="price-range-field" />
-                    </div>
-                    <div className="col-3 p-0">
-                      <button type="button" className="btn btn-filter">Filter</button>
-                    </div>
-                  </div>
-                  <br />
-                </div>
-                <h3>Popular Picks</h3>
-                <div className="list-css">
-                  <ul>
-                    <li>
-                      {/* Default unchecked */}
-                      <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="defaultUnchecked-1" />
-                        <label className="custom-control-label" htmlFor="defaultUnchecked-1">Top Sales</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="defaultUnchecked-2" />
-                        <label className="custom-control-label" htmlFor="defaultUnchecked-2">New Products</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="defaultUnchecked-3" />
-                        <label className="custom-control-label" htmlFor="defaultUnchecked-3">Featured Products</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="defaultUnchecked-4" />
-                        <label className="custom-control-label" htmlFor="defaultUnchecked-4">Bestsellers</label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <h3>Product Tags</h3>
-                <div className="tag_bottom"><a className="tag-btn" href="#">organic</a><a className="tag-btn" href="shop_grid%2blist_3col.html">vegatable</a><a className="tag-btn" href="#">fruits</a><a className="tag-btn" href="#">fresh meat</a><a className="tag-btn" href="#">fastfood</a><a className="tag-btn" href="#">natural</a></div>
-              </div>
-            </div>
+            <SideBar />
             <div className="col-lg-9 col-md-12">
               <div className="row">
                 <div className="col-12">
-                  <div className="right-heading">
-                    <div className="row">
-                      <div className="col-md-4 col-4">
-                        <h3>Shop Grid</h3>
-                      </div>
-                      <div className="col-md-8 col-8">
-                        <div className="product-filter">
-                          <div className="view-method"> <a href="#" id="grid"><i className="fa fa-th-large" /></a> <a href="#" id="list"><i className="fa fa-list" /></a> </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <ProductsListHeader />
                   <div className="clearfix" />
                   <div id="products" className="row view-group">
                     <div className="item col-lg-4 col-md-4 mb-4 mb-4">
@@ -564,7 +575,7 @@ export default class Shops extends Component {
           </div>
           <div className="clearfix" />
         </div>
-        
+
         <div id="popup-1" className="popup-fcy">
           <div className="row">
             <div className="col-md-6 text-center"> <img src="assets/images/product-img/product-big-1.jpg" alt="" title className="img-fluid" /> </div>
@@ -605,6 +616,7 @@ export default class Shops extends Component {
             </div>
           </div>
         </div>
+
         <div id="popup-2" className="popup-fcy">
           <div className="row">
             <div className="col-md-6 text-center"> <img src="assets/images/product-img/kiwi.jpg" alt="" title className="img-fluid" /> </div>
