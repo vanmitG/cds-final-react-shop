@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link, NavLink } from "react-router-dom";
-import cartTop from "./cartTop"
 export default class NaviBar extends Component {
   render() {
     return (
