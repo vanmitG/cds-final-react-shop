@@ -1,6 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 // import { Redirect } from 'react-router-dom'
-import BreadCrumb from '../../components/BreadCrumb'
+import PropTypes from 'prop-types'
+import BreadCrumb from '../../components/BreadCrumb';
+import { connect } from 'react-redux';
+import { fetchProducts } from '../../redux/actions/productAction'
 
 const SideBar = () => {
   return (
@@ -87,11 +90,31 @@ const ProductsListHeader = () => {
     </div>
   )
 }
-export default class Shops extends Component {
+class Shops extends Component {
+  componentDidMount() {
+    this.props.fetchProducts();
+  }
+  // let this.props.product = [];
   render() {
+    let { products } = this.props
+    console.log('products', products);
+    if (products.length === 0) {
+      console.log('No', products)
+    } else {
+      console.log('yesss', products.length)
+    }
+
     return (
       <>
-        {/* Hello world */}
+        {this.props.products &&
+          this.props.products.map(product => {
+            return (
+              <div class="row">
+                <h2>{product.id}</h2>
+                <h2>{product.title}</h2>
+              </div>
+            );
+          })}
         <div className="container">
           <BreadCrumb page='Organic Shops' />
           <div className="row">
@@ -102,6 +125,7 @@ export default class Shops extends Component {
                   <ProductsListHeader />
                   <div className="clearfix" />
                   <div id="products" className="row view-group">
+                    {/* 1 product card */}
                     <div className="item col-lg-4 col-md-4 mb-4 mb-4">
                       <div className="sale-flag-side"> <span className="sale-text">Sale</span> </div>
                       <div className="thumbnail card product">
@@ -147,12 +171,13 @@ export default class Shops extends Component {
                             </div>
                           </div>
                           <div className="product-select">
-                            <button data-toggle="tooltip" data-placement="top" title="Quick view" className="add-to-compare round-icon-btn" data-fancybox="gallery" data-src="#popup-1" data-original-title="Quick view"><i className="fa fa-eye" aria-hidden="true" /></button>
+                            <button data-toggle="tooltip" data-placement="top" title="Quick view" className="add-to-compare round-icon-btn" data-fancybox="gallery" data-src="#helloKhuong" data-original-title="Quick view"><i className="fa fa-eye" aria-hidden="true" /></button>
                             <button data-toggle="tooltip" data-placement="top" title="Wishlist" className="add-to-wishlist round-icon-btn" onclick="window.location.href='wishlist.html'"><i className="fa fa-heart-o" aria-hidden="true" /></button>
                           </div>
                         </div>
                       </div>
                     </div>
+                    {/* 1 product card end */}
                     <div className="item col-lg-4 col-md-4 mb-4 mb-4">
                       <div className="sale-flag-side"> <span className="sale-text">Sale</span> </div>
                       <div className="thumbnail card product">
@@ -576,7 +601,7 @@ export default class Shops extends Component {
           <div className="clearfix" />
         </div>
 
-        <div id="popup-1" className="popup-fcy">
+        <div id="helloKhuong" className="popup-fcy">
           <div className="row">
             <div className="col-md-6 text-center"> <img src="assets/images/product-img/product-big-1.jpg" alt="" title className="img-fluid" /> </div>
             <div className="col-md-6">
@@ -942,3 +967,15 @@ export default class Shops extends Component {
     )
   }
 }
+
+Shops.propsTypes = {
+  fetchProducts: PropTypes.func.isRequired,
+  products: PropTypes.array.isRequired
+}
+
+const mapStateToProps = state => ({
+  // items is defined in productReducer
+  products: state.products.items
+});
+
+export default connect(mapStateToProps, { fetchProducts })(Shops)

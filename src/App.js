@@ -1,37 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react'
 import './App.css';
 import Footer from "./components/Footer"
-// import FooterTop from "./components/FooterTop"
-// import SearchBar from "./components/SearchBar"
-// import NavBarTop from "./components/NavBarTop"
 import NaviBar from "./components/NaviBar"
-// import NewsLetter from "./components/NewsLetter"
-// import Partners from "./components/Partners"
 import Routes from './pages/Routes'
+import { Provider } from "react-redux"
+import store from './redux/store';
 
 
-function App() {
-  return (
-    <>
-      {/* <NavBarTop />
-      <div className="clearfix" />
-      <NaviBar />
-      <div className="clearfix" />
-      <SearchBar />
-      <Routes />
-      <Partners />
-      <NewsLetter />
-      <FooterTop />
-      <Footer /> */}
-      {/* Navigation */}
-      <NaviBar />
-      {/* Navigation */}
-      <Routes />
-      {/* Footer */}
-      <Footer />
-      {/* /Footer */}
-    </>
-  );
+
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        {/* Navigation */}
+        <NaviBar />
+        {/* Navigation */}
+        <Routes />
+        {/* Footer */}
+        <Footer />
+        {/* /Footer */}
+      </Provider>
+    )
+  }
 }
-
-export default App;
