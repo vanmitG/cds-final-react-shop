@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 export default class ProductCard extends Component {
   render() {
     const { product } = this.props;
@@ -12,10 +12,13 @@ export default class ProductCard extends Component {
         <div className="thumbnail card product">
           <div className="img-event">
             {" "}
-            <a className="group list-group-image" href="single_product.html">
+            <Link
+              className="group list-group-image"
+              to={`/shops/${product.id}`}
+            >
               {" "}
               <img className="img-fluid" src={product.img_src} alt="" />
-            </a>{" "}
+            </Link>{" "}
           </div>
           <div className="caption card-body">
             <h5 className="product-type">{product.type}</h5>

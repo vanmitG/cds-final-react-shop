@@ -6,9 +6,14 @@
       "onSale": "True",
       "img_src": "/assets/images/product-img/product-img-1.jpg",
       "type": "Fruits",
-      "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
+      "short_desc": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
       "price": "14",
-      "popupId": "popup-1"
+      "popupId": "popup-1",
+      "popupImg": "/assets/images/product-img/product-big-1.jpg",
+      "isAvailable": "False",
+      "popupCat": "Vegetable Fruit",
+      "popupTag": "fruit green health organic",
+      "popupDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book when an unknown printer took a galley of type and scrambled it to make a type specimen bookwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.  remaining essentially unchanged.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": "2",
@@ -18,7 +23,12 @@
       "type": "Fruits",
       "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
       "price": "14",
-      "popupId": "popup-2"
+      "popupId": "popup-2",
+      "popupImg": "/assets/images/product-img/kiwi.jpg",
+      "isAvailable": "False",
+      "popupCat": "Vegetable Fruit",
+      "popupTag": "fruit green health organic",
+      "popupDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book when an unknown printer took a galley of type and scrambled it to make a type specimen bookwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.  remaining essentially unchanged.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": "3",
@@ -28,7 +38,12 @@
       "type": "Fruits",
       "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
       "price": "14",
-      "popupId": "popup-3"
+      "popupId": "popup-3",
+      "popupImg": "/assets/images/product-img/orange.jpg",
+      "isAvailable": "False",
+      "popupCat": "Vegetable Fruit",
+      "popupTag": "fruit green health organic",
+      "popupDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book when an unknown printer took a galley of type and scrambled it to make a type specimen bookwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.  remaining essentially unchanged.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": "4",
@@ -38,7 +53,12 @@
       "type": "Fruits",
       "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
       "price": "14",
-      "popupId": "popup-4"
+      "popupId": "popup-4",
+      "popupImg": "/assets/images/product-img/acai-berry.jpg",
+      "isAvailable": "False",
+      "popupCat": "Vegetable Fruit",
+      "popupTag": "fruit green health organic",
+      "popupDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book when an unknown printer took a galley of type and scrambled it to make a type specimen bookwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.  remaining essentially unchanged.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": "5",
@@ -48,7 +68,12 @@
       "type": "Fruits",
       "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
       "price": "14",
-      "popupId": "popup-5"
+      "popupId": "popup-5",
+      "popupImg": "/assets/images/product-img/maracuja.jpg",
+      "isAvailable": "False",
+      "popupCat": "Vegetable Fruit",
+      "popupTag": "fruit green health organic",
+      "popupDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book when an unknown printer took a galley of type and scrambled it to make a type specimen bookwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.  remaining essentially unchanged.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": "6",
@@ -58,17 +83,27 @@
       "type": "Vegetables",
       "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
       "price": "14",
-      "popupId": "popup-6"
+      "popupId": "popup-6",
+      "popupImg": "/assets/images/product-img/cucumber.jpg",
+      "isAvailable": "False",
+      "popupCat": "Vegetable Fruit",
+      "popupTag": "fruit green health organic",
+      "popupDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book when an unknown printer took a galley of type and scrambled it to make a type specimen bookwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.  remaining essentially unchanged.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": "7",
       "name": "Mushrooms",
       "onSale": "False",
       "img_src": "/assets/images/product-img/product-img-7.jpg",
-      "type": "Fruits",
+      "type": "Vegetables",
       "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
       "price": "14",
-      "popupId": "popup-7"
+      "popupId": "popup-7",
+      "popupImg": "/assets/images/product-img/mushroom.jpg",
+      "isAvailable": "True",
+      "popupCat": "Vegetable Fruit",
+      "popupTag": "fruit green health organic",
+      "popupDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book when an unknown printer took a galley of type and scrambled it to make a type specimen bookwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.  remaining essentially unchanged.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": "8",
@@ -78,17 +113,27 @@
       "type": "Fruits",
       "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
       "price": "14",
-      "popupId": "popup-8"
+      "popupId": "popup-8",
+      "popupImg": "/assets/images/product-img/persimmon.jpg",
+      "isAvailable": "False",
+      "popupCat": "Vegetable Fruit",
+      "popupTag": "fruit green health organic",
+      "popupDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book when an unknown printer took a galley of type and scrambled it to make a type specimen bookwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.  remaining essentially unchanged.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
-      "id": "10",
+      "id": "9",
       "name": "Nectarine",
       "onSale": "False",
       "img_src": "/assets/images/product-img/product-img-10.jpg",
       "type": "Fruits",
       "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
       "price": "14",
-      "popupId": "popup-9"
+      "popupId": "popup-9",
+      "popupImg": "/assets/images/product-img/nectarine.jpg",
+      "isAvailable": "False",
+      "popupCat": "Vegetable Fruit",
+      "popupTag": "fruit green health organic",
+      "popupDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book when an unknown printer took a galley of type and scrambled it to make a type specimen bookwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.  remaining essentially unchanged.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     }
   ]
 }

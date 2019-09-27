@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 // import { Redirect } from 'react-router-dom'
 import BreadCrumb from "../../components/BreadCrumb"
-export default class SingleProduct extends Component {
+import { connect } from 'react-redux';
+import { fetchProduct } from '../../redux/actions/productAction'
+class SingleProduct extends Component {
+  componentDidMount() {
+    console.log('singleProductPraamss', this.props.match.params.id)
+    this.props.fetchProduct(this.props.match.params.id);
+  }
   render() {
     return (
       <>
@@ -589,3 +596,14 @@ export default class SingleProduct extends Component {
     )
   }
 }
+SingleProduct.propsTypes = {
+  fetchProduct: PropTypes.func.isRequired
+  // product: PropTypes.array.isRequired
+}
+
+const mapStateToProps = state => ({
+  // items is defined in productReducer
+  product: state.products.item
+});
+
+export default connect(mapStateToProps, { fetchProduct })(SingleProduct)
