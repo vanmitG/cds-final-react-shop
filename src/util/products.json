@@ -2,39 +2,93 @@
   "Products": [
     {
       "id": "1",
-      "title": "apple"
+      "name": "Green Apple",
+      "onSale": "True",
+      "img_src": "/assets/images/product-img/product-img-1.jpg",
+      "type": "Fruits",
+      "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
+      "price": "14",
+      "popupId": "popup-1"
     },
     {
       "id": "2",
-      "title": "orange"
+      "name": "kiwi",
+      "onSale": "True",
+      "img_src": "/assets/images/product-img/product-img-2.jpg",
+      "type": "Fruits",
+      "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
+      "price": "14",
+      "popupId": "popup-2"
     },
     {
       "id": "3",
-      "title": "peach"
+      "name": "Orange",
+      "onSale": "True",
+      "img_src": "/assets/images/product-img/product-img-3.jpg",
+      "type": "Fruits",
+      "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
+      "price": "14",
+      "popupId": "popup-3"
     },
     {
       "id": "4",
-      "title": "peach"
+      "name": "Acai Berry",
+      "onSale": "True",
+      "img_src": "/assets/images/product-img/product-img-4.jpg",
+      "type": "Fruits",
+      "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
+      "price": "14",
+      "popupId": "popup-4"
     },
     {
       "id": "5",
-      "title": "peach"
+      "name": "Maracuja",
+      "onSale": "True",
+      "img_src": "/assets/images/product-img/product-img-5.jpg",
+      "type": "Fruits",
+      "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
+      "price": "14",
+      "popupId": "popup-5"
     },
     {
       "id": "6",
-      "title": "peach"
+      "name": "Cucumber",
+      "onSale": "True",
+      "img_src": "/assets/images/product-img/product-img-6.jpg",
+      "type": "Vegetables",
+      "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
+      "price": "14",
+      "popupId": "popup-6"
     },
     {
       "id": "7",
-      "title": "peach"
+      "name": "Mushrooms",
+      "onSale": "False",
+      "img_src": "/assets/images/product-img/product-img-7.jpg",
+      "type": "Fruits",
+      "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
+      "price": "14",
+      "popupId": "popup-7"
     },
     {
       "id": "8",
-      "title": "peach"
+      "name": "Khaiki",
+      "onSale": "False",
+      "img_src": "/assets/images/product-img/product-img-8.jpg",
+      "type": "Fruits",
+      "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
+      "price": "14",
+      "popupId": "popup-8"
     },
     {
-      "id": "9",
-      "title": "peach"
+      "id": "10",
+      "name": "Nectarine",
+      "onSale": "False",
+      "img_src": "/assets/images/product-img/product-img-10.jpg",
+      "type": "Fruits",
+      "description": "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod",
+      "price": "14",
+      "popupId": "popup-9"
     }
   ]
 }
