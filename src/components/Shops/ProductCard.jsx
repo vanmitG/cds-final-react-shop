@@ -45,9 +45,7 @@ class ProductCard extends Component {
                     <span>${product.price}.00</span>
                   </h3>
                   <div className="product-price pull-left">
-
-                    <form className="form-inline">
-
+                    <div className="form-inline">
                       <div className="stepper-widget">
                         <button type="button" className="js-qty-down">
                           -
@@ -62,7 +60,7 @@ class ProductCard extends Component {
                         </button>
 
                         <button
-                          onclick="window.location.href='cart.html'"
+                          style={{ backgroundColor: "white" }}
                           className="add2"
                         >
                           <i
@@ -71,7 +69,7 @@ class ProductCard extends Component {
                           />
                         </button>
                       </div>
-                    </form>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -84,7 +82,7 @@ class ProductCard extends Component {
               </div>
               <div className="col-12 p-0">
                 <div className="product-price">
-                  <form className="form-inline">
+                  <div className="form-inline">
                     <div className="stepper-widget">
                       <button type="button" className="js-qty-down">
                         -
@@ -98,13 +96,13 @@ class ProductCard extends Component {
                         +
                       </button>
                       <button
-                        onclick="window.location.href='cart.html'"
+                        style={{ backgroundColor: "white" }}
                         className="add2"
                       >
                         <i className="fa fa-shopping-bag" aria-hidden="true" />
                       </button>
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,7 +140,6 @@ class ProductCard extends Component {
                 >
                   <i className="fa fa-shopping-bag" aria-hidden="true" />
                 </button>
-
               </div>
             </div>
           </div>
@@ -160,4 +157,3 @@ export default connect(
   null,
   { addToCart }
 )(ProductCard);
-
