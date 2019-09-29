@@ -1,8 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 export default class ProductCard extends Component {
+  // onClickCart = prod_id => {
+  //   console.log("onCartClick", prod_id);
+  //   // this.props.addToCart(prod_id);
+  // };
+  onClickCart = () => {
+    console.log("onclickCart in Product cart");
+    this.props.addItemToCart();
+    // this.props.addToCart(this.props.product);
+  };
   render() {
     const { product } = this.props;
+    // const onClickCart = (prod_id, name) => {
+    //   console.log("onclickCart-ProductCard", prod_id, name);
+    // };
     return (
       <div className="item col-lg-4 col-md-4 mb-4 mb-4">
         <div className="sale-flag-side">
@@ -23,6 +35,11 @@ export default class ProductCard extends Component {
           <div className="caption card-body">
             <h5 className="product-type">{product.type}</h5>
             <h3 className="product-name">{product.name}</h3>
+            <button
+              onClick={() => console.log("test product cart", product.name)}
+            >
+              Add to Cart
+            </button>
             <div className="product-table">
               <p>{product.short_desc}</p>
               <div className="row m-0">
@@ -31,7 +48,7 @@ export default class ProductCard extends Component {
                     <span>${product.price}.00</span>
                   </h3>
                   <div className="product-price pull-left">
-                    <form className="form-inline">
+                    <div className="form-inline">
                       <div className="stepper-widget">
                         <button type="button" className="js-qty-down">
                           -
@@ -44,17 +61,17 @@ export default class ProductCard extends Component {
                         <button type="button" className="js-qty-up">
                           +
                         </button>
-                        <button
-                          onclick="window.location.href='cart.html'"
-                          className="add2"
+                        <a
+                          onClick={() => console.log("onClickCart")}
+                          className=""
                         >
                           <i
                             className="fa fa-shopping-bag"
                             aria-hidden="true"
                           />
-                        </button>
+                        </a>
                       </div>
-                    </form>
+                    </div>
                   </div>
                 </div>
               </div>
