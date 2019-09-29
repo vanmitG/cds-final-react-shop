@@ -1,6 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-export default class ProductCard extends Component {
+import { connect } from "react-redux";
+import { addToCart } from "../../redux/actions/cartAction";
+// import { addToWishList } from "../../redux/actions/wishListAction";
+
+class ProductCard extends Component {
+  onClickCart = (item, num) => {
+    console.log("onclickCart in ProductCard", item, num);
+    this.props.addToCart(item, num);
+    // this.props.addToCart(this.props.product);
+  };
+  // onClickWishList = (item, num) => {
+  //   console.log("onclickWishList in ProductCard", item, num);
+  //   this.props.addToWishList(item, num);
+  //   // this.props.addToCart(this.props.product);
+  // };
   render() {
     const { product } = this.props;
     return (
@@ -31,7 +45,9 @@ export default class ProductCard extends Component {
                     <span>${product.price}.00</span>
                   </h3>
                   <div className="product-price pull-left">
+
                     <form className="form-inline">
+
                       <div className="stepper-widget">
                         <button type="button" className="js-qty-down">
                           -
@@ -44,6 +60,7 @@ export default class ProductCard extends Component {
                         <button type="button" className="js-qty-up">
                           +
                         </button>
+
                         <button
                           onclick="window.location.href='cart.html'"
                           className="add2"
@@ -91,6 +108,9 @@ export default class ProductCard extends Component {
                 </div>
               </div>
             </div>
+
+            <div className="row m-3"></div>
+
             <div className="row p-3">
               <div className="product-select">
                 <button
@@ -109,10 +129,20 @@ export default class ProductCard extends Component {
                   data-placement="top"
                   title="Wishlist"
                   className="add-to-wishlist round-icon-btn"
-                  onclick="window.location.href='/wishlist"
+                  onClick={() => this.onClickCart(product, 5)}
                 >
                   <i className="fa fa-heart-o" aria-hidden="true" />
                 </button>
+                <button
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="ADD TO CART"
+                  className="add-to-wishlist round-icon-btn"
+                  onClick={() => this.onClickCart(product, 5)}
+                >
+                  <i className="fa fa-shopping-bag" aria-hidden="true" />
+                </button>
+
               </div>
             </div>
           </div>
@@ -121,3 +151,13 @@ export default class ProductCard extends Component {
     );
   }
 }
+
+// ProductCard.propsTypes = {
+//   addToCart: PropTypes.func.isRequired
+// };
+
+export default connect(
+  null,
+  { addToCart }
+)(ProductCard);
+

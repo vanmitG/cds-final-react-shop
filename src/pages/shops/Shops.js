@@ -30,7 +30,7 @@ class Shops extends Component {
   componentDidMount() {
     this.props.fetchProducts();
   }
-  // let this.props.product = [];
+
   render() {
     let { products } = this.props
     return (
@@ -48,7 +48,7 @@ class Shops extends Component {
                     {/* 9 product card */}
                     {products && products.map(product => {
                       return (
-                        <ProductCard product={product} />
+                        <ProductCard key={product.id} product={product} />
                       );
                     })}
                     {/* /9 product card */}
@@ -65,7 +65,7 @@ class Shops extends Component {
         {/* popup for shops */}
         {products && products.map(product => {
           return (
-            <PopupShop product={product} />
+            <PopupShop key={product.id} product={product} />
           );
         })}
       </>
@@ -84,3 +84,4 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { fetchProducts })(Shops)
+
