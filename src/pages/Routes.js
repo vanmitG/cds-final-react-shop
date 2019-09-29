@@ -20,12 +20,10 @@ import CommingSoon from "./shops/CommingSoon";
 import ForgotPassword from "./shops/ForgotPassword";
 
 
-
-
 export default class Routes extends Component {
   render() {
     return (
-      <div>
+      <>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/home" exact component={Home} />
@@ -47,7 +45,7 @@ export default class Routes extends Component {
           <Route path="/forgot_password" component={ForgotPassword} />
           <Route component={Error404} />
         </Switch>
-      </div>
+      </>
     );
   }
 }
