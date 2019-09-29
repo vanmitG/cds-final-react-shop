@@ -1,5 +1,6 @@
 import { ADD_TO_CART, REMOVE_FROM_CART, EMPTY_CART } from './types';
 
+
 export const addToCart = (item, num) => dispatch => {
   console.log('Add to Cart - cartAction', item, num)
   dispatch({
@@ -7,6 +8,7 @@ export const addToCart = (item, num) => dispatch => {
     payload: {
       "item": item, "quantity": num
     }
+
   })
 }
 

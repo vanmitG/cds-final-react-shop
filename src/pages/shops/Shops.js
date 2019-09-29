@@ -27,7 +27,7 @@ const Pagination = () => {
 }
 
 class Shops extends Component {
-  componentDidMount = () => {
+  componentDidMount() {
     this.props.fetchProducts();
   }
 
@@ -75,7 +75,6 @@ class Shops extends Component {
 
 Shops.propsTypes = {
   fetchProducts: PropTypes.func.isRequired,
-  addToCart: PropTypes.func.isRequired,
   products: PropTypes.array.isRequired
 }
 
@@ -85,3 +84,4 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { fetchProducts })(Shops)
+

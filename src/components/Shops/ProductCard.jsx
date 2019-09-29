@@ -37,7 +37,6 @@ class ProductCard extends Component {
           <div className="caption card-body">
             <h5 className="product-type">{product.type}</h5>
             <h3 className="product-name">{product.name}</h3>
-
             <div className="product-table">
               <p>{product.short_desc}</p>
               <div className="row m-0">
@@ -46,7 +45,9 @@ class ProductCard extends Component {
                     <span>${product.price}.00</span>
                   </h3>
                   <div className="product-price pull-left">
-                    <div className="form-inline">
+
+                    <form className="form-inline">
+
                       <div className="stepper-widget">
                         <button type="button" className="js-qty-down">
                           -
@@ -59,17 +60,18 @@ class ProductCard extends Component {
                         <button type="button" className="js-qty-up">
                           +
                         </button>
-                        <a
-                          onClick={() => console.log("onClickCart")}
-                          className=""
+
+                        <button
+                          onclick="window.location.href='cart.html'"
+                          className="add2"
                         >
                           <i
                             className="fa fa-shopping-bag"
                             aria-hidden="true"
                           />
-                        </a>
+                        </button>
                       </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -95,7 +97,10 @@ class ProductCard extends Component {
                       <button type="button" className="js-qty-up">
                         +
                       </button>
-                      <button className="add2">
+                      <button
+                        onclick="window.location.href='cart.html'"
+                        className="add2"
+                      >
                         <i className="fa fa-shopping-bag" aria-hidden="true" />
                       </button>
                     </div>
@@ -103,7 +108,9 @@ class ProductCard extends Component {
                 </div>
               </div>
             </div>
+
             <div className="row m-3"></div>
+
             <div className="row p-3">
               <div className="product-select">
                 <button
@@ -135,6 +142,7 @@ class ProductCard extends Component {
                 >
                   <i className="fa fa-shopping-bag" aria-hidden="true" />
                 </button>
+
               </div>
             </div>
           </div>
@@ -152,3 +160,4 @@ export default connect(
   null,
   { addToCart }
 )(ProductCard);
+
