@@ -9,8 +9,6 @@ import PopupShop from '../../components/Shops/PopupShop'
 
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../redux/actions/productAction'
-import { addToCart } from "../../redux/actions/cartAction";
-
 
 const Pagination = () => {
   return (
@@ -28,16 +26,11 @@ const Pagination = () => {
   )
 }
 
-
 class Shops extends Component {
   componentDidMount = () => {
     this.props.fetchProducts();
   }
-  addItemToCart = (item) => {
-    this.props.addToCart(item)
-    console.log('onClickCart-Shops', item);
-  }
-  // let this.props.product = [];
+
   render() {
     let { products } = this.props
     return (
@@ -55,7 +48,7 @@ class Shops extends Component {
                     {/* 9 product card */}
                     {products && products.map(product => {
                       return (
-                        <ProductCard product={product} addItemToCart={() => this.addItemToCart(product.id)} />
+                        <ProductCard key={product.id} product={product} />
                       );
                     })}
                     {/* /9 product card */}
@@ -72,7 +65,7 @@ class Shops extends Component {
         {/* popup for shops */}
         {products && products.map(product => {
           return (
-            <PopupShop product={product} />
+            <PopupShop key={product.id} product={product} />
           );
         })}
       </>
@@ -91,4 +84,4 @@ const mapStateToProps = state => ({
   products: state.products.items
 });
 
-export default connect(mapStateToProps, { fetchProducts, addToCart })(Shops)
+export default connect(mapStateToProps, { fetchProducts })(Shops)

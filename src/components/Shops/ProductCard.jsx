@@ -1,20 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-export default class ProductCard extends Component {
-  // onClickCart = prod_id => {
-  //   console.log("onCartClick", prod_id);
-  //   // this.props.addToCart(prod_id);
-  // };
-  onClickCart = () => {
-    console.log("onclickCart in Product cart");
-    this.props.addItemToCart();
+import { connect } from "react-redux";
+import { addToCart } from "../../redux/actions/cartAction";
+// import { addToWishList } from "../../redux/actions/wishListAction";
+
+class ProductCard extends Component {
+  onClickCart = (item, num) => {
+    console.log("onclickCart in ProductCard", item, num);
+    this.props.addToCart(item, num);
     // this.props.addToCart(this.props.product);
   };
+  // onClickWishList = (item, num) => {
+  //   console.log("onclickWishList in ProductCard", item, num);
+  //   this.props.addToWishList(item, num);
+  //   // this.props.addToCart(this.props.product);
+  // };
   render() {
     const { product } = this.props;
-    // const onClickCart = (prod_id, name) => {
-    //   console.log("onclickCart-ProductCard", prod_id, name);
-    // };
     return (
       <div className="item col-lg-4 col-md-4 mb-4 mb-4">
         <div className="sale-flag-side">
@@ -35,11 +37,7 @@ export default class ProductCard extends Component {
           <div className="caption card-body">
             <h5 className="product-type">{product.type}</h5>
             <h3 className="product-name">{product.name}</h3>
-            <button
-              onClick={() => console.log("test product cart", product.name)}
-            >
-              Add to Cart
-            </button>
+
             <div className="product-table">
               <p>{product.short_desc}</p>
               <div className="row m-0">
@@ -97,10 +95,7 @@ export default class ProductCard extends Component {
                       <button type="button" className="js-qty-up">
                         +
                       </button>
-                      <button
-                        onclick="window.location.href='cart.html'"
-                        className="add2"
-                      >
+                      <button className="add2">
                         <i className="fa fa-shopping-bag" aria-hidden="true" />
                       </button>
                     </div>
@@ -108,6 +103,7 @@ export default class ProductCard extends Component {
                 </div>
               </div>
             </div>
+            <div className="row m-3"></div>
             <div className="row p-3">
               <div className="product-select">
                 <button
@@ -126,9 +122,18 @@ export default class ProductCard extends Component {
                   data-placement="top"
                   title="Wishlist"
                   className="add-to-wishlist round-icon-btn"
-                  onclick="window.location.href='/wishlist"
+                  onClick={() => this.onClickCart(product, 5)}
                 >
                   <i className="fa fa-heart-o" aria-hidden="true" />
+                </button>
+                <button
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="ADD TO CART"
+                  className="add-to-wishlist round-icon-btn"
+                  onClick={() => this.onClickCart(product, 5)}
+                >
+                  <i className="fa fa-shopping-bag" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -138,3 +143,12 @@ export default class ProductCard extends Component {
     );
   }
 }
+
+// ProductCard.propsTypes = {
+//   addToCart: PropTypes.func.isRequired
+// };
+
+export default connect(
+  null,
+  { addToCart }
+)(ProductCard);
