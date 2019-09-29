@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link, NavLink } from "react-router-dom";
-export default class NaviBar extends Component {
+import { connect } from "react-redux";
+class NaviBar extends Component {
   render() {
+    const { carts } = this.props
+    console.log('navibar', carts.length)
     return (
       <>
         {/* Navigation */}
@@ -51,8 +55,8 @@ export default class NaviBar extends Component {
                           <li className="dropdown"> <a className="dropdown-toggle" href="#" data-toggle="dropdown"> <i className="fa fa-user-circle-o" aria-hidden="true" /></a>
                             <div className="dropdown-menu dropdown-menu-right animate slideIn"> <Link className="dropdown-item" to="/login">Login</Link> <Link className="dropdown-item" to="/my_account">My Account</Link> <Link className="dropdown-item" to="/register">Register</Link> <Link className="dropdown-item" to="/forgot_password">Forgot Password</Link> </div>
                           </li>
-                          <li><Link to="/wish_list"><i className="fa fa-heart-o" aria-hidden="true" /><span className="circle-2">1</span></Link></li>
-                          <li className="dropdown"> <a className="dropdown-toggle link" href="#" data-toggle="dropdown"><i className="fa fa-shopping-bag" aria-hidden="true" /><span className="circle-2">1</span></a>
+                          <li><Link to="/wish_list"><i className="fa fa-heart-o" aria-hidden="true" /><span className="circle-2">{carts.length}</span></Link></li>
+                          <li className="dropdown"> <a className="dropdown-toggle link" href="#" data-toggle="dropdown"><i className="fa fa-shopping-bag" aria-hidden="true" /><span className="circle-2">{carts.length}</span></a>
                             <div className="dropdown-menu dropdown-menu2 dropdown-menu-right  animate slideIn">
                               <div className="container">
                                 <div className="row">
@@ -188,7 +192,7 @@ export default class NaviBar extends Component {
                     <div className="dropdown-menu dropdown-menu-right animate slideIn"> <Link className="dropdown-item" to="/login">Login</Link> <Link className="dropdown-item" to="/my_account">My Account</Link> <Link className="dropdown-item" to="/register">Register</Link> <Link className="dropdown-item" to="/forgot_password">Forgot Password</Link> </div>
                   </li>
                   <li><Link to="/wish_list"><i className="fa fa-heart-o" aria-hidden="true" /><span className="circle-2">1</span></Link></li>
-                  <li className="dropdown"> <a className="dropdown-toggle link" href="#" data-toggle="dropdown"><i className="fa fa-shopping-bag" aria-hidden="true" /><span className="circle-2">1</span></a>
+                  <li className="dropdown"> <a className="dropdown-toggle link" href="#" data-toggle="dropdown"><i className="fa fa-shopping-bag" aria-hidden="true" /><span className="circle-2">{carts.length}</span></a>
                     <div className="dropdown-menu dropdown-menu2 dropdown-menu-right animate slideIn">
                       <div className="container">
                         <div className="row">
@@ -253,3 +257,13 @@ export default class NaviBar extends Component {
     )
   }
 }
+NaviBar.propsTypes = {
+  carts: PropTypes.array.isRequired
+}
+
+const mapStateToProps = state => ({
+  // items is defined in productReducer
+  carts: state.cart.cart
+});
+
+export default connect(mapStateToProps)(NaviBar)

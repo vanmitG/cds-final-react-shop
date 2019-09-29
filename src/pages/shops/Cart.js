@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
@@ -87,9 +88,9 @@ class Cart extends Component {
   }
 }
 
-// Cart.propsTypes = {
-//   cart: PropTypes.array.isRequired
-// }
+Cart.propsTypes = {
+  carts: PropTypes.array.isRequired
+}
 
 const mapStateToProps = state => ({
   // items is defined in productReducer

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/actions/cartAction";
@@ -88,6 +89,7 @@ class ProductCard extends Component {
                         -
                       </button>
                       <input
+                        name="quantity"
                         type="text"
                         className="js-qty-input"
                         defaultValue={1}
@@ -149,9 +151,9 @@ class ProductCard extends Component {
   }
 }
 
-// ProductCard.propsTypes = {
-//   addToCart: PropTypes.func.isRequired
-// };
+ProductCard.propsTypes = {
+  addToCart: PropTypes.func.isRequired
+};
 
 export default connect(
   null,
