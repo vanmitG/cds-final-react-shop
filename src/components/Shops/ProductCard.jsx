@@ -24,7 +24,7 @@ export default class ProductCard extends Component {
             <h5 className="product-type">{product.type}</h5>
             <h3 className="product-name">{product.name}</h3>
             <div className="product-table">
-              <p>{product.description}</p>
+              <p>{product.short_desc}</p>
               <div className="row m-0">
                 <div className="col p-0">
                   <h3 className="product-price pull-left">

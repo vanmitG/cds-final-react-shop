@@ -6,20 +6,62 @@ import { connect } from 'react-redux';
 import { fetchProduct } from '../../redux/actions/productAction'
 class SingleProduct extends Component {
   componentDidMount() {
-    console.log('singleProductPraamss', this.props.match.params.id)
     this.props.fetchProduct(this.props.match.params.id);
   }
   render() {
+    const { product } = this.props
     return (
       <>
+
+        <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+          <div className="carousel-inner">
+
+            <div className="carousel-item active item">
+              <div className="product"><a className="product-img" href="#"><img src="/assets/images/product-img/product-img-1.jpg" alt="" /></a>
+                <h5 className="product-type">Fruits</h5>
+                <h3 className="product-name">Green Apple</h3>
+                <h3 className="product-price">$14.00 </h3>
+                <div className="product-select">
+                  <button data-toggle="tooltip" data-placement="top" title className="add-to-compare round-icon-btn" data-fancybox="gallery" data-src="#popup-1" data-original-title="Quick view"><i className="fa fa-eye" aria-hidden="true" /></button>
+                  <button data-toggle="tooltip" data-placement="top" title="Wishlist" className="add-to-wishlist round-icon-btn" onclick="window.location.href='wishlist.html'"><i className="fa fa-heart-o" aria-hidden="true" /></button>
+                  <button data-toggle="tooltip" data-placement="top" title="Add to cart" className="add-to-cart round-icon-btn" onclick="window.location.href='shop.html'"><i className="fa fa-shopping-bag" aria-hidden="true" /></button>
+                </div>
+              </div>
+            </div>
+
+            <div className="arousel-item item">
+              <div className="product"><a className="product-img" href="#"><img src="/assets/images/product-img/product-img-2.jpg" alt="" /></a>
+                <h5 className="product-type">Vegetables</h5>
+                <h3 className="product-name">Ingredients</h3>
+                <h3 className="product-price">$14.00</h3>
+                <div className="product-select">
+                  <button data-toggle="tooltip" data-placement="top" title className="add-to-compare round-icon-btn" data-fancybox="gallery" data-src="#popup-2" data-original-title="Quick view"><i className="fa fa-eye" aria-hidden="true" /></button>
+                  <button data-toggle="tooltip" data-placement="top" title="Wishlist" className="add-to-wishlist round-icon-btn" onclick="window.location.href='wishlist.html'"><i className="fa fa-heart-o" aria-hidden="true" /></button>
+                  <button data-toggle="tooltip" data-placement="top" title="Add to cart" className="add-to-cart round-icon-btn" onclick="window.location.href='shop.html'"><i className="fa fa-shopping-bag" aria-hidden="true" /></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true" />
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true" />
+            <span className="sr-only">Next</span>
+          </a>
+        </div>
         {/* Hello world */}
+
         {/* page content---------- */}
+
         <div className="container">
           <BreadCrumb page="Product Details" />
           <div className="clearfix" />
         </div>
         <div className="inner-header2">
-          <h3>Orange</h3>
+          <h3>{product.name}</h3>
         </div>
         <div className="inner-page">
           <div className="container">
@@ -51,16 +93,16 @@ class SingleProduct extends Component {
               <div className="col-lg-6  product-text">
                 <div className="row">
                   <div className="col-md-6 col-sm-6 col-6">
-                    <h3>Orange</h3>
+                    <h3>{product.name}</h3>
                     <img src="/assets/images/star.png" alt="" title /> <img src="/assets/images/star.png" alt="" title /> <img src="/assets/images/star.png" alt="" title /> <img src="/assets/images/star.png" alt="" title /> <img src="/assets/images/star.png" alt="" title /> </div>
                   <div className="col-md-6 col-sm-6 text-right col-6">
                     <div className="price-css"> <span>$35.00</span>
                       <div className="clearfix" />
-                      $24.00 </div>
+                      ${product.price}.00 </div>
                   </div>
                   <div className="col-md-12">
                     <div className="mt-3">
-                      <p>The orange is the fruit of the citrus species Citrus × sinensis in the family Rutaceae. Orange trees are widely grown in tropical and subtropical climates for their sweet fruit. The fruit of the orange tree can be eaten fresh, or processed for its juice or fragrant peel.</p>
+                      <p>{product.short_desc}</p>
                       <div className="mt-3 text-2">
                         <p><span>Availability</span>: &nbsp;&nbsp;<img src="/assets/images/available.png" alt="" title /> In Stock</p>
                         <p><span>Vendor</span>: &nbsp;&nbsp;organicfood store</p>
@@ -114,6 +156,7 @@ class SingleProduct extends Component {
                 </div>
               </div>
               <div className="clearfix"> </div>
+              {/* tab description */}
               <div className="col-md-12">
                 <div id="tabs" className="description">
                   <div>
@@ -175,7 +218,7 @@ class SingleProduct extends Component {
                                 <hr />
                               </div>
                               <div className="clearfix" />
-                              <div className="col-lg-2 col-md-3 col-sm-2 text-center"><img src="/assets/images/review2.jpg" alt="" title className="radius image-boder img-fluid" /></div>
+                              <div className="col-lg-2 col-md-3 col-sm-2 text-center"><img src="/assets/images/review2.jpg" alt="" title="" className="radius image-boder img-fluid" /></div>
                               <div className="col-lg-10 col-md-9 col-sm-10">
                                 <h2 className="font-15 mt-10">Daryl Michaels <span className="font-13 text-themecolor">Product: Mobile Phone</span></h2>
                                 <span className="fa fa-star checked font-13" /> <span className="fa fa-star checked font-13" /> <span className="fa fa-star checked font-13" /> <span className="fa fa-star font-13" /> <span className="fa fa-star font-13" /> <span className="red">&nbsp;1 Min ago </span>
@@ -225,10 +268,12 @@ class SingleProduct extends Component {
                   </div>
                 </div>
               </div>
+              {/* /tab description */}
               <div className="clearfix" />
               <div className="related">
                 <div className="col-md-12">
                   <h2 className="icon-css">Related Products</h2>
+
                   <div className="owl-carousel latest-products owl-theme wow fadeIn">
                     <div className="item">
                       <div className="product"><a className="product-img" href="#"><img src="/assets/images/product-img/product-img-1.jpg" alt="" /></a>
@@ -305,6 +350,7 @@ class SingleProduct extends Component {
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -597,8 +643,8 @@ class SingleProduct extends Component {
   }
 }
 SingleProduct.propsTypes = {
-  fetchProduct: PropTypes.func.isRequired
-  // product: PropTypes.array.isRequired
+  fetchProduct: PropTypes.func.isRequired,
+  product: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
