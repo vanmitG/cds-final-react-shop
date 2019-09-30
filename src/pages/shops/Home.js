@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import NaviBar from "../../components/NaviBar"
-import Footer from "../../components/Footer"
+// import NaviBar from "../../components/NaviBar"
+// import Footer from "../../components/Footer"
 // import HeroBanner from "../../components/home/HeroBanner"
 // import BestSeller from "../../components/home/BestSeller"
 // import DealOfTheWeek from "../../components/home/DealOfTheWeek"

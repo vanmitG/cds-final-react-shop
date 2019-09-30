@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 
 export default class ProductsListHeader extends Component {
+  onGridClick = () => {
+    console.log("grid-group-item");
+  };
+  onListClick = () => {
+    console.log("list-group-item");
+  };
   render() {
     return (
       <div className="right-heading">
@@ -12,12 +18,20 @@ export default class ProductsListHeader extends Component {
             <div className="product-filter">
               <div className="view-method">
                 {" "}
-                <a href="#" id="grid">
+                <button
+                  className="btn btn-out-line customHover"
+                  onClick={() => this.onGridClick()}
+                  id="grid"
+                >
                   <i className="fa fa-th-large" />
-                </a>{" "}
-                <a href="#" id="list">
+                </button>
+                <button
+                  id="list"
+                  onClick={() => this.onListClick()}
+                  className="btn btn-out-line customHover"
+                >
                   <i className="fa fa-list" />
-                </a>{" "}
+                </button>
               </div>
             </div>
           </div>

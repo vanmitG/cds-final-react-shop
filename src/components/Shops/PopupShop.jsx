@@ -1,6 +1,15 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { addToCart } from "../../redux/actions/cartAction";
+class PopupShop extends Component {
+  state = { quant: 1 };
+  onClickCart = (item, num) => {
+    console.log("onclickCart in PopupShop-Card", item, num);
+    this.props.addToCart(item, num);
+    // this.props.addToCart(this.props.product);
+  };
 
-export default class PopupShop extends Component {
   render() {
     const { product } = this.props;
     return (
@@ -39,10 +48,11 @@ export default class PopupShop extends Component {
                     step={1}
                     min={1}
                     max={50}
-                    name="quantity"
+                    onChange={e => this.setState({ quant: e.target.value })}
                     defaultValue={1}
                     title="Qty"
                     size={4}
+                    value={this.state.quant}
                   />
                 </div>
                 <div className="col-10">
@@ -50,9 +60,14 @@ export default class PopupShop extends Component {
                     <div className="row">
                       <div className="col-6">
                         <div className="add_to_cart">
-                          <a href="cart.html" className="">
+                          <button
+                            className="btn cart"
+                            onClick={() =>
+                              this.onClickCart(product, this.state.quant)
+                            }
+                          >
                             ADD TO CART
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -83,3 +98,11 @@ export default class PopupShop extends Component {
     );
   }
 }
+
+PopupShop.propsTypes = {
+  addToCart: PropTypes.func.isRequired
+};
+export default connect(
+  null,
+  { addToCart }
+)(PopupShop);

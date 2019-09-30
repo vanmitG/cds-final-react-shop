@@ -6,11 +6,17 @@ import { addToCart } from "../../redux/actions/cartAction";
 // import { addToWishList } from "../../redux/actions/wishListAction";
 
 class ProductCard extends Component {
+  state = { quant: 1 };
   onClickCart = (item, num) => {
     console.log("onclickCart in ProductCard", item, num);
     this.props.addToCart(item, num);
     // this.props.addToCart(this.props.product);
   };
+  // onQntChange = e => {
+
+  //   console.log("onchange qan", e);
+  // };
+
   // onClickWishList = (item, num) => {
   //   console.log("onclickWishList in ProductCard", item, num);
   //   this.props.addToWishList(item, num);
@@ -19,7 +25,7 @@ class ProductCard extends Component {
   render() {
     const { product } = this.props;
     return (
-      <div className="item col-lg-4 col-md-4 mb-4 mb-4">
+      <div className="item grid-group-item col-lg-4 col-md-4 mb-4 mb-4">
         <div className="sale-flag-side">
           {" "}
           <span className="sale-text">Sale</span>{" "}
@@ -55,6 +61,10 @@ class ProductCard extends Component {
                           type="text"
                           className="js-qty-input"
                           defaultValue={1}
+                          onChange={e =>
+                            this.setState({ quant: e.target.value })
+                          }
+                          value={this.state.quant}
                         />
                         <button type="button" className="js-qty-up">
                           +
@@ -89,10 +99,11 @@ class ProductCard extends Component {
                         -
                       </button>
                       <input
-                        name="quantity"
                         type="text"
                         className="js-qty-input"
                         defaultValue={1}
+                        onChange={e => this.setState({ quant: e.target.value })}
+                        value={this.state.quant}
                       />
                       <button type="button" className="js-qty-up">
                         +
@@ -109,9 +120,7 @@ class ProductCard extends Component {
               </div>
             </div>
 
-            <div className="row m-3"></div>
-
-            <div className="row p-3">
+            <div className="row m-3">
               <div className="product-select">
                 <button
                   data-toggle="tooltip"
@@ -128,8 +137,14 @@ class ProductCard extends Component {
                   data-toggle="tooltip"
                   data-placement="top"
                   title="Wishlist"
-                  className="add-to-wishlist round-icon-btn"
-                  onClick={() => this.onClickCart(product, 5)}
+                  className="add-to-wishlist round-icon-btn mr-1"
+                  onClick={() =>
+                    this.onClickCart(
+                      product,
+                      //check if quantity is a number, if not return 0
+                      this.state.quant % 1 === 0 ? this.state.quant : 0
+                    )
+                  }
                 >
                   <i className="fa fa-heart-o" aria-hidden="true" />
                 </button>
@@ -138,7 +153,13 @@ class ProductCard extends Component {
                   data-placement="top"
                   title="ADD TO CART"
                   className="add-to-wishlist round-icon-btn"
-                  onClick={() => this.onClickCart(product, 5)}
+                  onClick={() =>
+                    this.onClickCart(
+                      product,
+                      //check if quantity is a number, if not return 0
+                      this.state.quant % 1 === 0 ? this.state.quant : 0
+                    )
+                  }
                 >
                   <i className="fa fa-shopping-bag" aria-hidden="true" />
                 </button>
