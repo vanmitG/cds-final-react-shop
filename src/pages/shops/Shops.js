@@ -72,7 +72,6 @@ class Shops extends Component {
     )
   }
 }
-
 Shops.propsTypes = {
   fetchProducts: PropTypes.func.isRequired,
   products: PropTypes.array.isRequired

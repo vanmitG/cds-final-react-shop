@@ -5,3 +5,12 @@
 .callbacks_container {
   display: block !important;
 }
+
+.customHover :hover {
+  background-color: white;
+  color: #f36e24;
+  z-index: 3;
+}
+.btn-cust {
+  color: black;
+}
