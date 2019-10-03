@@ -4,6 +4,8 @@ Created with love by: Van Mit
 
 This is a simple e-commerce front-end application built using [create-react-app](doc/createReactApp.md). A motivation and project brief can be found [here](https://gist.github.com/vanmitG/9a119a162e6d0390a70d9febdb88f367)
 
+#### Project [demo](https://cds-ecom-final.netlify.com/)
+
 ## User Stories
 
 ### The following _functionalities_ are **completed** :
@@ -18,19 +20,20 @@ This is a simple e-commerce front-end application built using [create-react-app]
   - [x] Carts, checkout, wish list.
   - [x] Register, login, my account, forgot password
   - [x] Blogs, single blog.
+  - [x] Users can see a list of products
+  - [x] Users can go to a single product information pages
+  - [x] Users can add product to cart which display product, quantity of Users's order
+  - [x] Users can delete product from carts
 
 ### The following _features_ are **to be implemented** :
 
-- [] Users can see a list of products
-- [] Users can go to a single product information pages
 - [] User can filter products listed base on catergory
-- [] Users can add product to cart which display product, quantity and total sum of Users's order
-- [] Users can edit/delete product from carts
+- [] Users can add product to cart which display total sum of Users's order
+- [] Users can edit product from carts
 - [] Users can checkout products and receive a confirmation of order when submit.
 - [] The following pages is to be included with dynamic content:
 
-  - [] Product list (shops), single product.
-  - [] Carts, checkout, wish list.
+  - [] checkout, wish list.
   - [] Register, login, my account, forgot password
   - [] Blogs, single blog.
 
@@ -38,9 +41,7 @@ This is a simple e-commerce front-end application built using [create-react-app]
 
 ## Time Spent and Lessons Learned
 
-Time spent: **12** hours spent in total.
-
-Describe any challenges encountered while building the app.
+Time spent: **80** hours spent in total.
 
 ## License
 

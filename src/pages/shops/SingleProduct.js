@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import BreadCrumb from "../../components/BreadCrumb"
 import { connect } from 'react-redux';
 import { fetchProduct } from '../../redux/actions/productAction'
@@ -13,49 +13,6 @@ class SingleProduct extends Component {
     return (
       <>
 
-        <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-          <div className="carousel-inner">
-
-            <div className="carousel-item active item">
-              <div className="product"><a className="product-img" href="#"><img src="/assets/images/product-img/product-img-1.jpg" alt="" /></a>
-                <h5 className="product-type">Fruits</h5>
-                <h3 className="product-name">Green Apple</h3>
-                <h3 className="product-price">$14.00 </h3>
-                <div className="product-select">
-                  <button data-toggle="tooltip" data-placement="top" title className="add-to-compare round-icon-btn" data-fancybox="gallery" data-src="#popup-1" data-original-title="Quick view"><i className="fa fa-eye" aria-hidden="true" /></button>
-                  <button data-toggle="tooltip" data-placement="top" title="Wishlist" className="add-to-wishlist round-icon-btn" onclick="window.location.href='wishlist.html'"><i className="fa fa-heart-o" aria-hidden="true" /></button>
-                  <button data-toggle="tooltip" data-placement="top" title="Add to cart" className="add-to-cart round-icon-btn" onclick="window.location.href='shop.html'"><i className="fa fa-shopping-bag" aria-hidden="true" /></button>
-                </div>
-              </div>
-            </div>
-
-            <div className="arousel-item item">
-              <div className="product"><a className="product-img" href="#"><img src="/assets/images/product-img/product-img-2.jpg" alt="" /></a>
-                <h5 className="product-type">Vegetables</h5>
-                <h3 className="product-name">Ingredients</h3>
-                <h3 className="product-price">$14.00</h3>
-                <div className="product-select">
-                  <button data-toggle="tooltip" data-placement="top" title className="add-to-compare round-icon-btn" data-fancybox="gallery" data-src="#popup-2" data-original-title="Quick view"><i className="fa fa-eye" aria-hidden="true" /></button>
-                  <button data-toggle="tooltip" data-placement="top" title="Wishlist" className="add-to-wishlist round-icon-btn" onclick="window.location.href='wishlist.html'"><i className="fa fa-heart-o" aria-hidden="true" /></button>
-                  <button data-toggle="tooltip" data-placement="top" title="Add to cart" className="add-to-cart round-icon-btn" onclick="window.location.href='shop.html'"><i className="fa fa-shopping-bag" aria-hidden="true" /></button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true" />
-            <span className="sr-only">Previous</span>
-          </a>
-          <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true" />
-            <span className="sr-only">Next</span>
-          </a>
-        </div>
-        {/* Hello world */}
-
-        {/* page content---------- */}
-
         <div className="container">
           <BreadCrumb page="Product Details" />
           <div className="clearfix" />
@@ -66,29 +23,8 @@ class SingleProduct extends Component {
         <div className="inner-page">
           <div className="container">
             <div className="row justify-content-md-center">
-              <div className="col-lg-6"> <a href="wishlist.html" className="wish-list"><i className="fa fa-heart" aria-hidden="true" /></a>
-                <div id="sync1" className="owl-carousel owl-theme">
-                  <div className="item easyzoom easyzoom--overlay"> <a href="/assets/images/product-details/zoom-1.jpg"> <img src="/assets/images/product-details/product-1.jpg" alt="" title /> </a> </div>
-                  <div className="item">
-                    <div className="item easyzoom easyzoom--overlay"> <a href="/assets/images/product-details/zoom-2.jpg"> <img src="/assets/images/product-details/product-2.jpg" alt="" title /> </a> </div>
-                  </div>
-                  <div className="item">
-                    <div className="item easyzoom easyzoom--overlay"> <a href="/assets/images/product-details/zoom-3.jpg"> <img src="/assets/images/product-details/product-3.jpg" alt="" title /> </a> </div>
-                  </div>
-                  <div className="item">
-                    <div className="item easyzoom easyzoom--overlay"> <a href="/assets/images/product-details/zoom-4.jpg"> <img src="/assets/images/product-details/product-4.jpg" alt="" title /> </a> </div>
-                  </div>
-                  <div className="item">
-                    <div className="item easyzoom easyzoom--overlay"> <a href="/assets/images/product-details/zoom-1.jpg"> <img src="/assets/images/product-details/product-1.jpg" alt="" title /> </a> </div>
-                  </div>
-                </div>
-                <div id="sync2" className="owl-carousel owl-theme">
-                  <div className="item"><img src="/assets/images/product-details/product-1.jpg" alt="" title /></div>
-                  <div className="item"><img src="/assets/images/product-details/product-2.jpg" alt="" title /></div>
-                  <div className="item"><img src="/assets/images/product-details/product-3.jpg" alt="" title /></div>
-                  <div className="item"><img src="/assets/images/product-details/product-4.jpg" alt="" title /></div>
-                  <div className="item"><img src="/assets/images/product-details/product-1.jpg" alt="" title /></div>
-                </div>
+              <div className="col-lg-6"> <Link to="/wish_list" className="wish-list"><i className="fa fa-heart" aria-hidden="true" /></Link>
+                <img className="img-fluid" src={product.popupImg} alt=""></img>
               </div>
               <div className="col-lg-6  product-text">
                 <div className="row">
@@ -121,7 +57,7 @@ class SingleProduct extends Component {
                                 <button type="button" className="btn btn-default btn-number" data-type="plus" data-field="quant[1]"><i className="fa fa-plus" /> </button>
                               </span> </div>
                           </div>
-                          <div className="col-md-6 col-sm-6"> <a className="btn add-to-cart2" href="cart.html">Add To Cart</a> </div>
+                          <div className="col-md-6 col-sm-6"> <Link className="btn add-to-cart2" to="/shops">Add To Cart</Link> </div>
                         </div>
                       </div>
                       <div className="clearfix" />
