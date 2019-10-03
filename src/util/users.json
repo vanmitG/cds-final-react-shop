@@ -1,0 +1,172 @@
+{
+  "Users": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Benjamin",
+        "last": "Ginnish"
+      },
+      "location": {
+        "street": {
+          "number": 4992,
+          "name": "Maple Ave"
+        },
+        "city": "Delta",
+        "state": "Saskatchewan",
+        "country": "Canada",
+        "postcode": "X9T 4J8",
+        "coordinates": {
+          "latitude": "-65.5795",
+          "longitude": "-102.9264"
+        },
+        "timezone": {
+          "offset": "-6:00",
+          "description": "Central Time (US & Canada), Mexico City"
+        }
+      },
+      "email": "Benjamin.Ginnish@example.com",
+      "login": {
+        "uuid": "2537a4e1-9174-493e-b8dd-da07d9d34006",
+        "username": "ticklishsnake8",
+        "password": "abc123",
+        "salt": "KeEqMo6C",
+        "md5": "2be32bca87b4aa4712c597b9dfab87aa",
+        "sha1": "43ed36ba36b662859a85ff17ba58ed667c788f2d",
+        "sha256": "37b817826eb8925bfbdbe73a9d58981cee3b8f56edac40c47362c28cce6c5401"
+      },
+      "dob": {
+        "date": "1981-10-19T00:06:16.881Z",
+        "age": 38
+      },
+      "registered": {
+        "date": "2002-06-27T16:19:34.799Z",
+        "age": 17
+      },
+      "phone": "858-220-0465",
+      "cell": "337-032-8602",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/46.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/46.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/46.jpg"
+      },
+      "nat": "CA"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Renato",
+        "last": "Jesus"
+      },
+      "location": {
+        "street": {
+          "number": 1088,
+          "name": "Rua Belo Horizonte "
+        },
+        "city": "Camaçari",
+        "state": "Ceará",
+        "country": "Brazil",
+        "postcode": 25154,
+        "coordinates": {
+          "latitude": "-68.9620",
+          "longitude": "-8.7781"
+        },
+        "timezone": {
+          "offset": "-11:00",
+          "description": "Midway Island, Samoa"
+        }
+      },
+      "email": "Renato.Jesus@example.com",
+      "login": {
+        "uuid": "c8012222-3513-4ea9-89a9-84603e6fe5e2",
+        "username": "purplemeercat579",
+        "password": "mega",
+        "salt": "mvfm5OKt",
+        "md5": "7519cf5d84fdaf5eab6bf8552fb2c0bf",
+        "sha1": "e2750b49dac406d7f5d1149eadb8614ba705de9f",
+        "sha256": "76f9d7f74874ae5d3c453562160908007fa48c921d50d469376fbbaac3ce2676"
+      },
+      "dob": {
+        "date": "1961-06-10T12:14:55.312Z",
+        "age": 58
+      },
+      "registered": {
+        "date": "2009-02-12T18:08:55.421Z",
+        "age": 10
+      },
+      "phone": "(29) 3993-9130",
+      "cell": "(07) 3269-1919",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/0.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/0.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/0.jpg"
+      },
+      "nat": "BR"
+    },
+    {
+      "gender": "female",
+      "name": {
+        "title": "Ms",
+        "first": "Dragica",
+        "last": "Kuschel"
+      },
+      "location": {
+        "street": {
+          "number": 9162,
+          "name": "Mittelstraße"
+        },
+        "city": "Leichlingen (Rheinland)",
+        "state": "Saarland",
+        "country": "Germany",
+        "postcode": 66021,
+        "coordinates": {
+          "latitude": "-46.5994",
+          "longitude": "122.8033"
+        },
+        "timezone": {
+          "offset": "-4:00",
+          "description": "Atlantic Time (Canada), Caracas, La Paz"
+        }
+      },
+      "email": "Dragica.Kuschel@example.com",
+      "login": {
+        "uuid": "37e4ea7b-981d-433a-835c-3c2db3d4285a",
+        "username": "silverduck828",
+        "password": "emmett",
+        "salt": "Fh1moOtm",
+        "md5": "31f14f06380752df329e8a683b23b016",
+        "sha1": "abc37ea767b9232c03b940c90166257efa3f0d68",
+        "sha256": "7e0bfb4c30ddcf15462ea11b21798f7ead3d93f8cc6377919e9842ac265f412a"
+      },
+      "dob": {
+        "date": "1953-07-07T00:46:56.159Z",
+        "age": 66
+      },
+      "registered": {
+        "date": "2016-09-24T08:55:50.270Z",
+        "age": 3
+      },
+      "phone": "0182-1536010",
+      "cell": "0171-9518521",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/66.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/66.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/66.jpg"
+      },
+      "nat": "DE"
+    }
+  ]
+}

@@ -90,6 +90,7 @@ class NaviBar extends Component {
                   <div className="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="Dropdown1">
                     <h5>Informations</h5>
                     <Link className="dropdown-item" to="/home">Home</Link>
+                    <Link className="dropdown-item" to="/home2">Home2</Link>
                     <Link className="dropdown-item" to="/about">About Us</Link>
                     <Link className="dropdown-item" to="/faq">FAQ</Link>
                     <Link className="dropdown-item" to="/term_and_condition">Terms And Conditions</Link> <Link className="dropdown-item" to="/contact">Contact Us</Link>

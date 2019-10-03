@@ -21,9 +21,10 @@ export default function (state = initialState, action) {
         total: 0
       }
     case REMOVE_FROM_CART:
+      console.log('remove from cart-cart reducer', action.payload)
       return {
         ...state
-        , cart: state.cart.filter((item, i) => i !== action.payload.index)
+        , cart: state.cart.filter((item, i) => i !== action.payload)
         // ,total: state.total - action.payload.item.cost
       }
     default:

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./shops/Home";
+import Home2 from "./shops/Home2";
 import Error404 from "./shops/404";
 import Shops from "./shops/Shops";
 import SingleProduct from "./shops/SingleProduct";
@@ -25,8 +26,9 @@ export default class Routes extends Component {
     return (
       <>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/home" exact component={Home} />
+          <Route path="/" exact component={Home2} />
+          <Route path="/home" exact component={Home2} />
+          <Route path="/home2" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/shops" exact component={Shops} />
           <Route path="/shops/:id" component={SingleProduct} />
