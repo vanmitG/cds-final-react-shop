@@ -2,9 +2,9 @@
   text-align: center;
 } */
 
-.callbacks_container {
+/* .callbacks_container {
   display: block !important;
-}
+} */
 
 .customHover :hover {
   background-color: white;

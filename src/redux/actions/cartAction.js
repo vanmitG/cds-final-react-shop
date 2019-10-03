@@ -6,7 +6,7 @@ export const addToCart = (item, num) => dispatch => {
   dispatch({
     type: ADD_TO_CART,
     payload: {
-      "item": item, "quantity": num
+      "quantity": num, "item": item
     }
 
   })

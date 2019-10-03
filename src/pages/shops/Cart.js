@@ -36,7 +36,15 @@ class Cart extends Component {
                             {/* <span className="input-group-btn">
                           <button type="button" className="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]"> <i className="fa fa-minus" /> </button>
                         </span> */}
-                            <input type="text" name="quantity" className="form-control input-number" value={cart.quantity} />
+                            <input 
+                            type="number" 
+                            name="quantity" 
+                            className="form-control input-number" 
+                            onChange={e =>
+                              this.setState({ quant: e.target.value })
+                            }
+                            value={this.state.quant}
+                            />
                             {/* <span className="input-group-btn">
                             <button type="button" className="btn btn-default btn-number" data-type="plus" data-field="quant[1]"> <i className="fa fa-plus" /> </button>
                           </span>  */}
@@ -44,7 +52,7 @@ class Cart extends Component {
                         </td>
                         <td><div style={{ width: '100px' }}>
                           $30.9</div></td>
-                        <td><a href="#"><i className="fa fa-trash" aria-hidden="true" /></a></td>
+                        <td><button ><i className="fa fa-trash" aria-hidden="true" /></button></td>
                       </tr>
 
                     );

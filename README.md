@@ -18,19 +18,22 @@ This is a simple e-commerce front-end application built using [create-react-app]
   - [x] Carts, checkout, wish list.
   - [x] Register, login, my account, forgot password
   - [x] Blogs, single blog.
+- [x] Users can see a list of products
+- [x] Users can go to a single product information pages
+- [x] Users can add product to cart which display product, quantity and total sum of Users's order
+- [x] Users can edit/delete product from carts
+- [x] The following pages is to be included with dynamic content:
+  - [x] Product list (shops), single product.
+  - [x] Carts
 
 ### The following _features_ are **to be implemented** :
 
-- [] Users can see a list of products
-- [] Users can go to a single product information pages
 - [] User can filter products listed base on catergory
-- [] Users can add product to cart which display product, quantity and total sum of Users's order
-- [] Users can edit/delete product from carts
 - [] Users can checkout products and receive a confirmation of order when submit.
 - [] The following pages is to be included with dynamic content:
 
   - [] Product list (shops), single product.
-  - [] Carts, checkout, wish list.
+  - [] Checkout, wish list.
   - [] Register, login, my account, forgot password
   - [] Blogs, single blog.
 
@@ -38,7 +41,7 @@ This is a simple e-commerce front-end application built using [create-react-app]
 
 ## Time Spent and Lessons Learned
 
-Time spent: **12** hours spent in total.
+Time spent: **80** hours spent in total.
 
 Describe any challenges encountered while building the app.
 
