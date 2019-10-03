@@ -26,7 +26,7 @@ export default class Routes extends Component {
     return (
       <>
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={Home2} />
           <Route path="/home" exact component={Home2} />
           <Route path="/home2" exact component={Home} />
           <Route path="/about" component={About} />
