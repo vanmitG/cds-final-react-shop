@@ -14,7 +14,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="d-flex flex-column">
         {/* <HeroBanner /> */}
         {/* <LatesProduct />
         <FeatureProducts />
@@ -56,55 +56,10 @@ export default class Home extends Component {
           </div>
         </div>
 
-        <div className="item">
-          <div className="product">
-            <div className="carousel slide" data-ride="carousel">
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <div className="badge">
-                    <div className="text">Sale 10%</div>
-                    <a className="product-img" href="single_product.html"><img src="/assets/images/product-img/product-img-2.jpg" alt="" /></a> </div>
-                </div>
-                <div className="carousel-item">
-                  <div className="badge">
-                    <div className="text">Sale 10%</div>
-                    <a className="product-img" href="single_product.html"><img src="/assets/images/product-img/product-img-1.jpg" alt="" /> </a> </div>
-                </div>
-              </div>
-            </div>
-            <h5 className="product-type">Green Apple</h5>
-            <h3 className="product-name">Ingredients</h3>
-            <h3 className="product-price">$10.00 <del>$35.00</del></h3>
-            <div className="product-select">
-              <button data-toggle="tooltip" data-placement="top" title="Quick view" className="add-to-compare round-icon-btn" data-fancybox="gallery" data-src="#popup-1"><i className="fa fa-eye" aria-hidden="true" /></button>
-              <button data-toggle="tooltip" data-placement="top" title="Wishlist" className="add-to-wishlist round-icon-btn" onclick="window.location.href='wishlist.html'"><i className="fa fa-heart-o" aria-hidden="true" /></button>
-              <button data-toggle="tooltip" data-placement="top" title="Add To Cart" onclick="window.location.href='cart.html'" className="add-to-cart round-icon-btn"><i className="fa fa-shopping-bag" aria-hidden="true" /></button>
-            </div>
-          </div>
-        </div>
-
         {/* Navigation */}
         <div className="container search-div">
           <div className="row">
-            <div className="col-lg-3 col-md-4 top-dropdown">
-              <div className="all-cate custom-select2">
-                <select>
-                  <option>All Categories</option>
-                  <option>Fresh Meat</option>
-                  <option>Vegetables</option>
-                  <option>Fruit &amp; Nut Gifts</option>
-                  <option>Fresh Berries</option>
-                  <option>Ocean Foods</option>
-                  <option>Butter &amp; Eggs</option>
-                  <option>Fastfood</option>
-                  <option>Fresh Onion</option>
-                  <option>Papayaya &amp; Crisps</option>
-                  <option>Oatmeal</option>
-                  <option>Fresh Bananas</option>
-                </select>
-              </div>
-            </div>
-            <div className="col-lg-9 col-md-8">
+            <div className="col-lg-12 col-md-12">
               <div className="input-group filter-by">
                 <input type="hidden" name="search_param" defaultValue="all" id="search_param" />
                 <input type="text" className="form-control" name="x" placeholder="What do you need?" />

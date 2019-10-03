@@ -11,12 +11,11 @@ export default class Contact extends Component {
         </div>
         <div className="clearfix" />
         <div className="contact-page contact-us">
-          {/* <div className="feature map">
-            <img src="https://miro.medium.com/max/3840/1*Pgjvkel5lPImqGyRhi3HuA.png" />
-          </div> */}
-          <div className="row feature">
-            <img className="img-fluid" style={{ 'maxWidth': '100', 'height': 'auto' }} src="https://miro.medium.com/max/3840/1*Pgjvkel5lPImqGyRhi3HuA.png" />
-          </div>
+          <div className="hero-slider-item" style={{ background: 'url(https://miro.medium.com/max/3840/1*Pgjvkel5lPImqGyRhi3HuA.png) no-repeat center top', WebkitBackgroundSize: 'cover', MozBackgroundSize: 'cover', OBackgroundSize: 'cover', backgroundSize: 'cover' }}>
+            <div className="container banner2">
+              <div className="caption-banner" style={{ 'position': 'relative', 'zIndex': 999, 'textAlign': 'center', 'color': 'white' }}>
+                <h1><i className="fa fa-question"></i></h1>
+              </div></div></div>
           <div className="container">
             <div className="row justify-content-center mb-4">
               <div className="col-md-10">

@@ -6,13 +6,14 @@ export const addToCart = (item, num) => dispatch => {
   dispatch({
     type: ADD_TO_CART,
     payload: {
-      "item": item, "quantity": num
+      "quantity": num, "item": item
     }
 
   })
 }
 
 export const removeItem = (item) => dispatch => {
+  console.log('Remove Item - cartAction', item)
   dispatch({
     type: REMOVE_FROM_CART,
     payload: item

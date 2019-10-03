@@ -24,6 +24,9 @@ This is a simple e-commerce front-end application built using [create-react-app]
   - [x] Users can go to a single product information pages
   - [x] Users can add product to cart which display product, quantity of Users's order
   - [x] Users can delete product from carts
+- [x] The following pages is to be included with dynamic content:
+  - [x] Product list (shops), single product.
+  - [x] Carts
 
 ### The following _features_ are **to be implemented** :
 
@@ -34,6 +37,12 @@ This is a simple e-commerce front-end application built using [create-react-app]
 - [] The following pages is to be included with dynamic content:
 
   - [] checkout, wish list.
+
+- [] Users can checkout products and receive a confirmation of order when submit.
+- [] The following pages is to be included with dynamic content:
+
+  - [] Product list (shops), single product.
+  - [] Checkout, wish list.
   - [] Register, login, my account, forgot password
   - [] Blogs, single blog.
 

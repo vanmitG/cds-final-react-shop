@@ -2,8 +2,14 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-
+import { removeItem } from '../../redux/actions/cartAction'
 class Cart extends Component {
+  // state = { quant: 1 };
+  onDelete = (item) => {
+    console.log("onDelete Item in Card", item);
+    this.props.removeItem(item);
+    // this.props.addToCart(this.props.product);
+  };
   render() {
     let { carts } = this.props
     console.log('cartItem', carts)
@@ -36,7 +42,15 @@ class Cart extends Component {
                             {/* <span className="input-group-btn">
                           <button type="button" className="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]"> <i className="fa fa-minus" /> </button>
                         </span> */}
-                            <input type="text" name="quantity" className="form-control input-number" value={cart.quantity} />
+                            <input
+                              type="number"
+                              name="quantity"
+                              className="form-control input-number"
+                              // onChange={e =>
+                              //   this.setState({ quant: e.target.value })
+                              // }
+                              value={cart.quantity}
+                            />
                             {/* <span className="input-group-btn">
                             <button type="button" className="btn btn-default btn-number" data-type="plus" data-field="quant[1]"> <i className="fa fa-plus" /> </button>
                           </span>  */}
@@ -44,7 +58,7 @@ class Cart extends Component {
                         </td>
                         <td><div style={{ width: '100px' }}>
                           $30.9</div></td>
-                        <td><a href="#"><i className="fa fa-trash" aria-hidden="true" /></a></td>
+                        <td><button onClick={() => this.onDelete(i)}><i className="fa fa-trash" aria-hidden="true" /></button></td>
                       </tr>
 
                     );
@@ -89,7 +103,8 @@ class Cart extends Component {
 }
 
 Cart.propsTypes = {
-  carts: PropTypes.array.isRequired
+  carts: PropTypes.array.isRequired,
+  removeItem: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -97,4 +112,4 @@ const mapStateToProps = state => ({
   carts: state.cart.cart
 });
 
-export default connect(mapStateToProps)(Cart)
+export default connect(mapStateToProps, { removeItem })(Cart)
