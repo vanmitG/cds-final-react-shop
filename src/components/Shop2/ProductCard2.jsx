@@ -5,23 +5,12 @@ import { connect } from "react-redux";
 import { addToCart } from "../../redux/actions/cartAction";
 // import { addToWishList } from "../../redux/actions/wishListAction";
 
-class ProductCard extends Component {
+class ProductCard2 extends Component {
   state = { quant: 1 };
   onClickCart = (item, num) => {
     console.log("onclickCart in ProductCard", item, num);
     this.props.addToCart(item, num);
-    // this.props.addToCart(this.props.product);
   };
-  // onQntChange = e => {
-
-  //   console.log("onchange qan", e);
-  // };
-
-  // onClickWishList = (item, num) => {
-  //   console.log("onclickWishList in ProductCard", item, num);
-  //   this.props.addToWishList(item, num);
-  //   // this.props.addToCart(this.props.product);
-  // };
   render() {
     const { product } = this.props;
     return (
@@ -94,19 +83,12 @@ class ProductCard extends Component {
                 <div className="product-price">
                   <div className="form-inline">
                     <div className="stepper-widget">
-                      <button type="button" className="js-qty-down">
-                        -
-                      </button>
                       <input
-                        type="text"
-                        className="js-qty-input"
-                        defaultValue={1}
+                        type="number"
+                        className=""
                         onChange={e => this.setState({ quant: e.target.value })}
                         value={this.state.quant}
                       />
-                      <button type="button" className="js-qty-up">
-                        +
-                      </button>
                       <button
                         style={{ backgroundColor: "white" }}
                         className="add2"
@@ -171,11 +153,11 @@ class ProductCard extends Component {
   }
 }
 
-ProductCard.propsTypes = {
+ProductCard2.propsTypes = {
   addToCart: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
   { addToCart }
-)(ProductCard);
+)(ProductCard2);

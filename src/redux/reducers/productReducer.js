@@ -1,7 +1,7 @@
 import { FETCH_PRODUCTS, FETCH_PRODUCT } from '../actions/types';
 const initialState = {
   // products
-  items: [],
+  items: {},
   // product
   item: {}
 }
@@ -12,6 +12,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         items: action.payload
+
       }
     case FETCH_PRODUCT:
       return {

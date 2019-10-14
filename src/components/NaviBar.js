@@ -102,7 +102,7 @@ class NaviBar extends Component {
                   <div className="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="Dropdown2">
                     <h5>Organic Shops</h5>
                     <Link className="dropdown-item" to="/shops">Organic Shop</Link>
-                    <Link className="dropdown-item" to="/shops">Wonderful Shop</Link>
+                    <Link className="dropdown-item" to="/shop2">Wonderful Shop</Link>
                     <Link className="dropdown-item" to="/comming_soon">Other Shops</Link>
                   </div>
                 </li>

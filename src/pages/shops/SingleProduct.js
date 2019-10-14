@@ -12,7 +12,6 @@ class SingleProduct extends Component {
     const { product } = this.props
     return (
       <>
-
         <div className="container">
           <BreadCrumb page="Product Details" />
           <div className="clearfix" />

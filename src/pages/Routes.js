@@ -4,6 +4,7 @@ import Home from "./shops/Home";
 import Home2 from "./shops/Home2";
 import Error404 from "./shops/404";
 import Shops from "./shops/Shops";
+import Shop2 from "./shops/Shop2";
 import SingleProduct from "./shops/SingleProduct";
 import Blogs from "./shops/Blogs";
 import BlogSingle from "./shops/BlogSingle";
@@ -45,6 +46,7 @@ export default class Routes extends Component {
           <Route path="/term_and_condition" component={TermsCondition} />
           <Route path="/comming_soon" component={CommingSoon} />
           <Route path="/forgot_password" component={ForgotPassword} />
+          <Route path="/shop2" exact component={Shop2} />
           <Route component={Error404} />
         </Switch>
       </>
