@@ -13,11 +13,15 @@ class Shop2 extends Component {
   }
 
   render() {
-    const { products } = this.props.products;
-    console.log(products)
+    const { isLoading, items, error } = this.props.products;
     return (
       <div>
         <h1>Shop22</h1>
+        {
+          isLoading
+            ? console.log('isloading', isLoading)
+            : console.log('isloading', isLoading)
+        }
         {
           this.props.products.products && this.props.products.products.map((product) => {
             return (
@@ -46,7 +50,7 @@ Shop2.propsTypes = {
 }
 
 const mapStateToProps = state => ({
-  products: state.products.items
+  products: state.products
 });
 
 export default connect(mapStateToProps, { fetchProducts })(Shop2)
