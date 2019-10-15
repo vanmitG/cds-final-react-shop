@@ -17,12 +17,24 @@ class Shop2 extends Component {
     console.log(products)
     return (
       <div>
-        <h1>Shop2</h1>
+        <h1>Shop22</h1>
+        {
+          this.props.products.products && this.props.products.products.map((product) => {
+            return (
+              <h3>{product.id}</h3>
+            )
 
-        {console.log('shops2 - this.props.products:', products)}
+
+          })
+            ? console.log('with length', this.prob.products.products.length)
+            : console.log('without length')
+
+        }
+
+        {/* {console.log('shops2 - this.props.products:', products)}
         {this.props.products.products && this.props.products.products.map(product =>
           console.log('shop2 in loop', this.props.products.items.products.length)
-        )}
+        )} */}
       </div>
     )
   }

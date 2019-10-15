@@ -3,7 +3,7 @@ import { ADD_TO_CART, EMPTY_CART, REMOVE_FROM_CART } from '../actions/types';
 
 const initialState = {
   cart: [],
-  // total: 0,
+  total: 0,
 }
 
 export default function (state = initialState, action) {
@@ -12,7 +12,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         cart: [action.payload, ...state.cart],
-        // total: state.total + action.payload.price
+        total: state.total + action.payload.price
       }
     case EMPTY_CART:
       return {
@@ -25,7 +25,7 @@ export default function (state = initialState, action) {
       return {
         ...state
         , cart: state.cart.filter((item, i) => i !== action.payload)
-        // ,total: state.total - action.payload.item.cost
+        , total: state.total - action.payload.item.cost
       }
     default:
       return state

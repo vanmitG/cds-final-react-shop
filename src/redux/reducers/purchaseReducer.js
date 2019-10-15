@@ -1,8 +1,8 @@
 
-import { ADD_ORDER } from '../actions/types';
+import { ADD_PURCHASE } from '../actions/types';
 
 const initialState = {
-  order: {
+  purchase: {
     items: [],
     customer: {}
   }
@@ -10,10 +10,10 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case ADD_ORDER:
+    case ADD_PURCHASE:
       return {
         ...state,
-        order: { customer: action.payload.customer, items: action.payload.cartItems }
+        purchase: { customer: action.payload.customer, items: action.payload.cartItems }
       }
     default:
       return state
