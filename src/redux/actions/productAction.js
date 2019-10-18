@@ -21,7 +21,6 @@ export const fetchProductSuccess = products => {
   }
 }
 
-
 export const fetchProducts = () => async dispatch => {
   dispatch(fetchProductRequest());
   try {
@@ -33,12 +32,12 @@ export const fetchProducts = () => async dispatch => {
     dispatch(fetchProductFailure(error));
     console.log('fetchProducts-error', error);
   }
-
 }
 
 export const fetchProduct = (prod_id) => dispatch => {
-  const product = products.Products.find(el => el.id === prod_id
-  )
+  console.error("TODO: SHOULD NOT CALL!");
+  // TODO: Remove and replace with call to real backend.
+  const product = products.Products.find(el => el.id === prod_id)
   dispatch({
     type: FETCH_PRODUCT,
     payload: product

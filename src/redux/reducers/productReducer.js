@@ -12,7 +12,8 @@ export default function (state = initialState, action) {
   switch (action.type) {
     case FETCH_PROD_REQUEST:
       return {
-        ...state
+        ...state,
+        isLoading: true
       }
     case FETCH_PRODUCTS:
       return {

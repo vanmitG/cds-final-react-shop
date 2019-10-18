@@ -12,7 +12,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         cart: [action.payload, ...state.cart],
-        total: state.total + action.payload.price
+        total: state.total + action.payload.item.price * action.payload.quantity
       }
     case EMPTY_CART:
       return {
@@ -25,7 +25,7 @@ export default function (state = initialState, action) {
       return {
         ...state
         , cart: state.cart.filter((item, i) => i !== action.payload)
-        , total: state.total - action.payload.item.cost
+        , total: state.total - state.cart[action.payload].quantity * state.cart[action.payload].item.price
       }
     default:
       return state

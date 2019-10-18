@@ -6,9 +6,9 @@ import purchaseReducer from './purchaseReducer';
 // import wishListReducer from './wishListReducer';
 
 export default combineReducers({
-  products: productReducer
-  , cart: cartReducer
-  , purchase: purchaseReducer
+  products: productReducer, 
+  cart: cartReducer, 
+  purchase: purchaseReducer
   //   , wishList: wishListReducer
 });
 

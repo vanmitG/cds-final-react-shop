@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import BreadCrumb from '../../components/BreadCrumb';
 import ProductsListHeader from '../../components/Shops/ProductsListHeader'
-// import ProductCard from '../../components/Shops/ProductCard'
+import ProductCard from '../../components/Shops/ProductCard'
 // import PopupShop from '../../components/Shops/PopupShop'
 
 import { connect } from 'react-redux';
@@ -48,10 +48,7 @@ class Shops extends Component {
                     {/* 9 product card */}
                     {this.props.products.items.products && this.props.products.items.products.map(product => {
                       return (
-                        <ul>
-                          <li>hello</li>
-                        </ul>
-                        // <ProductCard key={product.id} product={product} />
+                        <ProductCard key={product.id} product={product} />
                       );
                     })}
                     {/* /9 product card */}
