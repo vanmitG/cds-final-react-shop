@@ -1,5 +1,7 @@
-
 //products
+export const FETCH_PROD_REQUEST = 'FETCH_PROD_REQUEST';
+export const FETCH_PROD_FAILURE = 'FETCH_PROD_FAILURE';
+export const FETCH_PROD_SUCCESS = 'FETCH_PROD_SUCCESS';
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 export const NEW_PRODUCT = 'NEW_PRODUCT';
@@ -28,5 +30,12 @@ export const ADD_TO_WISHLIST = 'ADD_TO_WISHLIST';
 export const REMOVE_FROM_WISTLIST = 'REMOVE_FROM_WISTLIST';
 export const EMPTY_WISTLIST = 'EMPTY_WISTLIST';
 
-//purchase order
-export const ADD_ORDER = 'ADD_ORDER';
+//purchases
+export const ADD_PURCHASE = 'ADD_PURCHASE';
+export const CANCEL_PURCHASE = 'CANCEL_PURCHASE';
+export const EDIT_PURCHASE = 'EDIT_PURCHASE';
+
+//error
+export const GET_ERROR = 'GET_ERROR';
+export const CLEAR_ERROR = 'CLEAR_ERROR';
+export const UPDATE_ERROR = 'UPDATE_ERROR';

@@ -11,6 +11,11 @@ class ProductCard2 extends Component {
     console.log("onclickCart in ProductCard", item, num);
     this.props.addToCart(item, num);
   };
+
+  static propsTypes = {
+    addToCart: PropTypes.func.isRequired
+  };
+
   render() {
     const { product } = this.props;
     return (
@@ -153,9 +158,9 @@ class ProductCard2 extends Component {
   }
 }
 
-ProductCard2.propsTypes = {
-  addToCart: PropTypes.func.isRequired
-};
+// ProductCard2.propsTypes = {
+
+// };
 
 export default connect(
   null,
