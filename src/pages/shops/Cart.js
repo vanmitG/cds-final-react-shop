@@ -2,16 +2,18 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { removeItem } from '../../redux/actions/cartAction'
+import { removeItem, emptyCart } from '../../redux/actions/cartAction'
 class Cart extends Component {
-  // state = { quant: 1 };
+  // state = { quant: [] }
   onDelete = (item) => {
     console.log("onDelete Item in Card", item);
     this.props.removeItem(item);
-    // this.props.addToCart(this.props.product);
+  };
+  onClearCart = () => {
+    this.props.emptyCart();
   };
   render() {
-    let { carts } = this.props
+    let { carts, total } = this.props
     console.log('cartItem', carts)
     return (
       <>
@@ -38,26 +40,26 @@ class Cart extends Component {
                         <td><div className="cart-detail">{cart.item.name}</div></td>
                         <td className="text-center"><div style={{ width: '80px' }}>${cart.item.price}.00 </div></td>
                         <td className="product-quantity" data-title="Quantity">
-                          <div className="input-group">
+                          <div style={{ width: '80px' }}>{cart.quantity}
                             {/* <span className="input-group-btn">
                           <button type="button" className="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]"> <i className="fa fa-minus" /> </button>
                         </span> */}
-                            <input
+                            {/* <input
                               type="number"
                               name="quantity"
                               className="form-control input-number"
                               // onChange={e =>
                               //   this.setState({ quant: e.target.value })
                               // }
-                              value={cart.quantity}
-                            />
+                              value={this.state.quant[i]}
+                            /> */}
                             {/* <span className="input-group-btn">
                             <button type="button" className="btn btn-default btn-number" data-type="plus" data-field="quant[1]"> <i className="fa fa-plus" /> </button>
                           </span>  */}
                           </div>
                         </td>
                         <td><div style={{ width: '100px' }}>
-                          $30.9</div></td>
+                          ${cart.item.price * cart.quantity}</div></td>
                         <td><button onClick={() => this.onDelete(i)}><i className="fa fa-trash" aria-hidden="true" /></button></td>
                       </tr>
 
@@ -67,6 +69,7 @@ class Cart extends Component {
 
                 </tbody>
               </table>
+              <button className="btn cart w-100" onClick={() => this.onClearCart()}> Clear Cart </button>
             </div>
           </div>
           <div className="col-12 col-xl-4 mb-5">
@@ -76,18 +79,18 @@ class Cart extends Component {
                   <tbody>
                     <tr className="cart-subtotal">
                       <td>Subtotal</td>
-                      <td className="text-right">$20.00</td>
+                      <td className="text-right">${total}</td>
                     </tr>
                     <tr className="shipping">
-                      <td colSpan={2} align="left" className="mb-0 pb-0"><h5 className="m-0 p-0">Shipping</h5></td>
+                      <td colSpan={2} align="left" className="mb-0 pb-0"><h5 className="m-0 p-0">Tax</h5></td>
                     </tr>
                     <tr>
-                      <td className="flat-rate"><h5>Flat rate:</h5></td>
-                      <td className="text-right amount">$20.00</td>
+                      <td className="flat-rate"><h5>10%:</h5></td>
+                      <td className="text-right amount">${total * 0.1}</td>
                     </tr>
                     <tr className="order-total">
                       <td><h5>Total</h5></td>
-                      <td align="right">$40.00</td>
+                      <td align="right">${total + total * 0.1}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -104,12 +107,14 @@ class Cart extends Component {
 
 Cart.propsTypes = {
   carts: PropTypes.array.isRequired,
+  total: PropTypes.number.isRequired,
   removeItem: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
   // items is defined in productReducer
-  carts: state.cart.cart
+  carts: state.cart.cart,
+  total: state.cart.total
 });
 
-export default connect(mapStateToProps, { removeItem })(Cart)
+export default connect(mapStateToProps, { removeItem, emptyCart })(Cart)

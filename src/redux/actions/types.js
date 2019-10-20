@@ -35,6 +35,11 @@ export const ADD_PURCHASE = 'ADD_PURCHASE';
 export const CANCEL_PURCHASE = 'CANCEL_PURCHASE';
 export const EDIT_PURCHASE = 'EDIT_PURCHASE';
 
+//Checkout
+export const ADD_CHECKOUT = 'ADD_CHECKOUT';
+export const CANCEL_CHECKOUT = 'CANCEL_CHECKOUT';
+
+
 //error
 export const GET_ERROR = 'GET_ERROR';
 export const CLEAR_ERROR = 'CLEAR_ERROR';

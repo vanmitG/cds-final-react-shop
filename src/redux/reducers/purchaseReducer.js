@@ -2,10 +2,8 @@
 import { ADD_PURCHASE } from '../actions/types';
 
 const initialState = {
-  purchase: {
-    items: [],
-    customer: {}
-  }
+  buyer_id: '',
+  cart_items: []
 }
 
 export default function (state = initialState, action) {
@@ -13,7 +11,8 @@ export default function (state = initialState, action) {
     case ADD_PURCHASE:
       return {
         ...state,
-        purchase: { customer: action.payload.customer, items: action.payload.cartItems }
+        buyer_id: action.payload.buyer_id,
+        cart_items: action.payload.cart_items
       }
     default:
       return state

@@ -13,7 +13,8 @@ class ProductCard2 extends Component {
   };
 
   static propsTypes = {
-    addToCart: PropTypes.func.isRequired
+    addToCart: PropTypes.func.isRequired,
+    product: PropTypes.object.isRequired
   };
 
   render() {
@@ -90,7 +91,7 @@ class ProductCard2 extends Component {
                     <div className="stepper-widget">
                       <input
                         type="number"
-                        className=""
+                        className="input-group"
                         onChange={e => this.setState({ quant: e.target.value })}
                         value={this.state.quant}
                       />
