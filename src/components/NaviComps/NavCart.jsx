@@ -1,21 +1,38 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { removeItem } from "../../redux/actions/cartAction";
 
-export default class NavCart extends Component {
-  onCartClick = () => {
-    console.log("/cart");
+class NavCart extends Component {
+  static propsTypes = {
+    removeItem: PropTypes.func.isRequired,
+    carts: PropTypes.array.isRequired,
+    total: PropTypes.number.isRequired
+  };
+
+  onCheckOut = () => {
+    console.log("/checkout");
+  };
+  onDelete = i => {
+    console.log("delete item #", i);
+    this.props.removeItem(i);
   };
   render() {
-    const { carts } = this.props;
+    const { carts, total } = this.props;
     return (
       <>
         <button
           className="dropdown-toggle link customHover"
-          // href="#"
           data-toggle="dropdown"
         >
           <i className="fa fa-shopping-bag" aria-hidden="true" />
-          <span className="circle-2">{carts.length}</span>
+
+          {carts.length > 0 ? (
+            <span className="circle-2">{carts.length}</span>
+          ) : (
+            ""
+          )}
         </button>
         <div className="dropdown-menu dropdown-menu2 dropdown-menu-right animate slideIn">
           <div className="container">
@@ -35,9 +52,13 @@ export default class NavCart extends Component {
                       <div className="col-md-9">
                         <p>
                           {cart.quantity} x {cart.item.name}
-                          <span className="price">$ {cart.item.price}.70</span>
+                          <span className="price">$ {cart.item.price}</span>
                         </p>
-                        <button href="#" className="close">
+                        <button
+                          onClick={() => this.onDelete(i)}
+                          className="close"
+                          style={{ color: "red" }}
+                        >
                           x
                         </button>{" "}
                       </div>
@@ -52,7 +73,7 @@ export default class NavCart extends Component {
               </div>
               <div className="col-md-9 text-right">
                 {" "}
-                <span className="font-15">$ 2.80</span>{" "}
+                <span className="font-15">{total * 0.1}</span>{" "}
               </div>
               <div className="col-md-12">
                 <hr />
@@ -65,14 +86,18 @@ export default class NavCart extends Component {
               <div className="col-md-9 text-right">
                 {" "}
                 <span className="font-15">
-                  <strong>$ 10.80</strong>
+                  <strong>{total * 0.1 + total}</strong>
                 </span>{" "}
               </div>
               <div className="col-md-12">
                 <hr />
               </div>
               <div className="col-md-12 text-center">
-                <Link to="/checkout" className="btn check-out w-100">
+                <Link
+                  to="/checkout"
+                  className="btn check-out w-100"
+                  onClick={() => this.onCheckOut()}
+                >
                   Checkout
                 </Link>
               </div>
@@ -83,3 +108,14 @@ export default class NavCart extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  // items is defined in productReducer
+  carts: state.cart.cart,
+  total: state.cart.total
+});
+
+export default connect(
+  mapStateToProps,
+  { removeItem }
+)(NavCart);

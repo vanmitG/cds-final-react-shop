@@ -19,14 +19,13 @@ class Shop2 extends Component {
         <h3>Loading Spinning</h3>
       )
     } else {
-
       return (
-        <div>
-          <h1>Shop22</h1>
+        <div className="container">
           <div className="row">
             <div className="col-lg-12 col-md-12">
               <div className="row">
                 <div className="col-12">
+                  <BreadCrumb page='Wonderful Shop' />
                   <div className="clearfix" />
                   <div id="products" className="row view-group">
                     {items.products && items.products.map(product => {

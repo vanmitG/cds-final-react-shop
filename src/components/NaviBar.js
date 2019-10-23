@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Link, NavLink, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
+import { Link } from 'react-router-dom'
 import NavCart from "./NaviComps/NavCart"
 
-class NaviBar extends Component {
+
+export default class NaviBar extends Component {
   render() {
-    const { carts } = this.props
-    console.log('navibar', carts.length)
     return (
       <>
         {/* Navigation */}
@@ -16,7 +13,7 @@ class NaviBar extends Component {
             <div className="row">
               <div className="col-lg-5 col-md-12 top-div top1">
                 <ul>
-                  <li><a href="mailto:apply@coderschool.vn"><i className="fa fa-envelope" /> &nbsp;apply@coderschool.vn</a></li>
+                  <li><Link to="mailto:apply@coderschool.vn"><i className="fa fa-envelope" /> &nbsp;apply@coderschool.vn</Link></li>
                   <li>|</li>
                   <li><i className="fa fa-phone" aria-hidden="true" /> +84 984 326 569</li>
                 </ul>
@@ -27,25 +24,25 @@ class NaviBar extends Component {
                   <ul>
                     <li>
                       <ul className="social-network">
-                        <li><a href="/comming_soon" className="icoRss" title="RSS"><i className="fa fa-rss" /></a></li>
-                        <li><a href="/comming_soon" className="icoFacebook" title="Facebook"><i className="fa fa-facebook" /></a></li>
-                        <li><a href="/comming_soon" className="icoTwitter" title="Twitter"><i className="fa fa-twitter" /></a></li>
-                        <li><a href="/comming_soon" className="icoGoogle" title="Google +"><i className="fa fa-google-plus" /></a></li>
-                        <li><a href="/comming_soon" className="icoLinkedin" title="Linkin"><i className="fa fa-linkedin" /></a></li>
+                        <li><Link to="/comming_soon" className="icoRss" title="RSS"><i className="fa fa-rss" /></Link></li>
+                        <li><Link to="/comming_soon" className="icoFacebook" title="Facebook"><i className="fa fa-facebook" /></Link></li>
+                        <li><Link to="/comming_soon" className="icoTwitter" title="Twitter"><i className="fa fa-twitter" /></Link></li>
+                        <li><Link to="/comming_soon" className="icoGoogle" title="Google +"><i className="fa fa-google-plus" /></Link></li>
+                        <li><Link to="/comming_soon" className="icoLinkedin" title="Linkin"><i className="fa fa-linkedin" /></Link></li>
                       </ul>
                     </li>
                     <li>
                       <ul className="top-ul">
                         <li>
-                          <div className="dropdown"> <a className="dropdown-toggle" href="#" data-toggle="dropdown"><img src="/assets/images/flag.jpg" alt="" title="" /> English <i className="fa fa-angle-down" /></a>
-                            <div className="dropdown-menu flag-css dropdown-menu-right"> <a href="#">English</a> <a href="#"><span className="flag-icon flag-icon-fr"> </span>French</a> <a href="#"><span className="flag-icon flag-icon-it"> </span>Italian</a> <a href="#"><span className="flag-icon flag-icon-ru"> </span>Russian</a> </div>
+                          <div className="dropdown"> <Link className="dropdown-toggle" to="#" data-toggle="dropdown"><img src="/assets/images/flag.jpg" alt="" title="" /> English <i className="fa fa-angle-down" /></Link>
+                            <div className="dropdown-menu flag-css dropdown-menu-right"> <Link to="#">English</Link> <Link to="#"><span className="flag-icon flag-icon-fr"> </span>French</Link> <Link to="#"><span className="flag-icon flag-icon-it"> </span>Italian</Link> <Link to="#"><span className="flag-icon flag-icon-ru"> </span>Russian</Link> </div>
                           </div>
                         </li>
                         <li>
-                          <div className="dropdown"> <a className="dropdown-toggle currency" href="#" data-toggle="dropdown"> <i className="fa fa-angle-down" /></a>
+                          <div className="dropdown"> <Link className="dropdown-toggle currency" to='#' data-toggle="dropdown"> <i className="fa fa-angle-down" /></Link>
                             <ul className="dropdown-menu drop1 dropdown-menu-right">
-                              <li className="dropdown-item"><a href="#"> US Dollar</a></li>
-                              <li className="dropdown-item"><a href="#"> British Pound</a></li>
+                              <li className="dropdown-item"><Link to='#'> US Dollar</Link></li>
+                              <li className="dropdown-item"><Link to='#'> British Pound</Link></li>
                             </ul>
                           </div>
                         </li>
@@ -63,7 +60,7 @@ class NaviBar extends Component {
 
                           <li><Link to="/wish_list"><i className="fa fa-heart-o" aria-hidden="true" /><span className="circle-2">1</span></Link></li>
                           <li className="dropdown">
-                            <NavCart carts={carts} />
+                            <NavCart />
                           </li>
                         </ul>
                       </div>
@@ -133,7 +130,7 @@ class NaviBar extends Component {
                   </li>
 
                   <li className="dropdown">
-                    <NavCart carts={carts} />
+                    <NavCart />
                   </li>
                 </ul>
               </div>
@@ -148,13 +145,4 @@ class NaviBar extends Component {
     )
   }
 }
-NaviBar.propsTypes = {
-  carts: PropTypes.array.isRequired
-}
 
-const mapStateToProps = state => ({
-  // items is defined in productReducer
-  carts: state.cart.cart
-});
-
-export default connect(mapStateToProps)(NaviBar)
