@@ -1,9 +1,8 @@
-
 import { ADD_CHECKOUT, CANCEL_CHECKOUT } from '../actions/types';
 
 const initialState = {
-  cart_items: {},
-  buyer_id: ''
+  isCheckout: false,
+  checkout: {}
 }
 
 export default function (state = initialState, action) {
@@ -11,14 +10,14 @@ export default function (state = initialState, action) {
     case ADD_CHECKOUT:
       return {
         ...state,
-        buyer_id: 1,
-        cart_items: action.payload
+        isCheckout: true,
+        checkout: action.payload
       }
     case CANCEL_CHECKOUT:
       return {
         ...state,
-        buyer_id: '',
-        cart_items: {}
+        isCheckout: false,
+        checkout: {}
       }
     default:
       return state

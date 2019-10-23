@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { removeItem, emptyCart } from '../../redux/actions/cartAction'
+import { removeItem, emptyCart } from '../../redux/actions/cartAction';
+import { addCheckout } from '../../redux/actions/checkoutAction'
+
 class Cart extends Component {
-  // state = { quant: [] }
+
   onDelete = (item) => {
     console.log("onDelete Item in Card", item);
     this.props.removeItem(item);
@@ -12,8 +14,13 @@ class Cart extends Component {
   onClearCart = () => {
     this.props.emptyCart();
   };
+  onCheckout = (buyer_id, cart) => {
+    console.log("onCheckout Item in Card", buyer_id, cart);
+    this.props.addCheckout(buyer_id, cart);
+  }
   render() {
-    let { carts, total } = this.props
+    let { carts, total } = this.props;
+    const current_user = 1;
     console.log('cartItem', carts)
     return (
       <>
@@ -94,7 +101,7 @@ class Cart extends Component {
                     </tr>
                   </tbody>
                 </table>
-                <Link to="/checkout" className="btn cart w-100"> Proceed to checkout</Link> </div>
+                <Link to="/checkout" className="btn cart w-100" onClick={() => this.onCheckout(current_user, { cart: carts, total: total })}> Proceed to checkout</Link> </div>
             </div>
           </div>
         </div>
@@ -108,7 +115,9 @@ class Cart extends Component {
 Cart.propsTypes = {
   carts: PropTypes.array.isRequired,
   total: PropTypes.number.isRequired,
-  removeItem: PropTypes.func.isRequired
+  removeItem: PropTypes.func.isRequired,
+  emptyCart: PropTypes.func.isRequired,
+  addCheckout: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -117,4 +126,4 @@ const mapStateToProps = state => ({
   total: state.cart.total
 });
 
-export default connect(mapStateToProps, { removeItem, emptyCart })(Cart)
+export default connect(mapStateToProps, { removeItem, emptyCart, addCheckout })(Cart)
