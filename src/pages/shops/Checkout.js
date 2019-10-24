@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { cancelCheckout } from '../../redux/actions/checkoutAction';
 import { placeOrder } from '../../redux/actions/purchaseAction'
+import { emptyCart } from '../../redux/actions/cartAction'
 import BreadCrumb from '../../components/BreadCrumb';
+
 class Checkout extends Component {
   static propsTypes = {
     checkout: PropTypes.object.isRequired,
+    purchase: PropTypes.object.isRequired,
     isCheckout: PropTypes.bool.isRequired,
     cancelCheckout: PropTypes.func.isRequired,
-    placeOrder: PropTypes.func.isRequired
+    placeOrder: PropTypes.func.isRequired,
+    emptyCart: PropTypes.func.isRequired
   }
   onCancelCheckout() {
     console.log('Cancel Checkout');
@@ -22,12 +26,27 @@ class Checkout extends Component {
     })
 
     this.props.placeOrder(buyer_id, cart_items);
+    this.props.emptyCart();
+    //also empty check out
+    this.onCancelCheckout();
   }
   render() {
     if (!this.props.isCheckout) {
-      return (
-        <div className="container"> <h2>Oops! There is nothing to checkout</h2></div>
-      )
+      if (this.props.purchase.isNewItem) {
+        const { msg, purchase } = this.props.purchase.new_item
+        return (<div>
+          <div><h3>Hello user: {purchase.user}</h3></div>
+          <div><h3>{msg}</h3></div>
+          <div><h3>Purchase #{purchase.id} has a total of ${purchase.total}</h3></div></div>
+        )
+      } else {
+        return (
+          <Redirect to={{
+            pathname: '/cart'
+          }}
+          />
+        )
+      }
     } else {
       const { cart, buyer_id } = this.props.checkout;
       const carts = cart.cart
@@ -129,7 +148,8 @@ class Checkout extends Component {
 
 const mapStateToProps = state => ({
   checkout: state.checkout.checkout,
-  isCheckout: state.checkout.isCheckout
+  isCheckout: state.checkout.isCheckout,
+  purchase: state.purchase
 });
 
-export default connect(mapStateToProps, { cancelCheckout, placeOrder })(Checkout)
+export default connect(mapStateToProps, { cancelCheckout, placeOrder, emptyCart })(Checkout)

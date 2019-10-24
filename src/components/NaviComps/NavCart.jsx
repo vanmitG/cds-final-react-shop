@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeItem } from "../../redux/actions/cartAction";
+import { addCheckout } from "../../redux/actions/checkoutAction";
 
 class NavCart extends Component {
   static propsTypes = {
@@ -11,8 +12,9 @@ class NavCart extends Component {
     total: PropTypes.number.isRequired
   };
 
-  onCheckOut = () => {
-    console.log("/checkout");
+  onCheckout = (buyer_id, cart) => {
+    console.log("onCheckout Item in NavCart", buyer_id, cart);
+    this.props.addCheckout(buyer_id, cart);
   };
   onDelete = i => {
     console.log("delete item #", i);
@@ -20,6 +22,7 @@ class NavCart extends Component {
   };
   render() {
     const { carts, total } = this.props;
+    const current_user = 1;
     return (
       <>
         <button
@@ -93,13 +96,22 @@ class NavCart extends Component {
                 <hr />
               </div>
               <div className="col-md-12 text-center">
-                <Link
-                  to="/checkout"
-                  className="btn check-out w-100"
-                  onClick={() => this.onCheckOut()}
-                >
-                  Checkout
-                </Link>
+                {carts.length > 0 ? (
+                  <Link
+                    to="/checkout"
+                    className="btn cart w-100"
+                    onClick={() =>
+                      this.onCheckout(current_user, {
+                        cart: carts,
+                        total: total
+                      })
+                    }
+                  >
+                    Checkout
+                  </Link>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </div>
@@ -117,5 +129,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { removeItem }
+  { removeItem, addCheckout }
 )(NavCart);
