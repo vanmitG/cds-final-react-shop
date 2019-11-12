@@ -28,12 +28,26 @@ export const fetchPurchaseSuccess = purchase => {
   }
 }
 
+export const fetchPurchases = () => async dispatch => {
+  dispatch(fetchPurchaseRequest());
+  try {
+    const response = await fetch('http://localhost:5000/api/purchases');
+    const jsonData = await response.json();
+    dispatch(fetchPurchaseSuccess(jsonData));
+    console.log('fetchPurchase-purchaseAction', jsonData)
+  } catch (error) {
+    dispatch(fetchPurchaseFailure(error));
+    console.log('fetchPurchases-error', error);
+  }
+}
+
 export const addPurchase = new_purchase => {
   return {
     type: ADD_PURCHASE,
     payload: new_purchase
   }
 }
+
 
 export const placeOrder = (buyer_id, cart_items) => async dispatch => {
   dispatch(fetchPurchaseRequest());

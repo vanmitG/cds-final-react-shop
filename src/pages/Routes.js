@@ -20,7 +20,7 @@ import WishList from "./shops/WishList";
 import Checkout from "./shops/Checkout";
 import CommingSoon from "./shops/CommingSoon";
 import ForgotPassword from "./shops/ForgotPassword";
-
+import Purchases from "./shops/Purchase";
 
 export default class Routes extends Component {
   render() {
@@ -47,6 +47,7 @@ export default class Routes extends Component {
           <Route path="/comming_soon" component={CommingSoon} />
           <Route path="/forgot_password" component={ForgotPassword} />
           <Route path="/shop2" exact component={Shop2} />
+          <Route path="/purchases" exact component={Purchases} />
           <Route component={Error404} />
         </Switch>
       </>
