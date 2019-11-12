@@ -36,7 +36,9 @@ class Purchase extends Component {
                   <li>id: {purchase.id}</li>
                   <li>buy date: {purchase.created_date}</li>
                   <li>total: {purchase.total}</li>
-                  <li>user id: {purchase.user}</li>
+                  <li>user id: {purchase.buyer_id}</li>
+                  <li>status id: {purchase.status_id}</li>
+                  <li>update date: {purchase.updated_date}</li>
                   <hr />
                 </ul>
               );
