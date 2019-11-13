@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import BreadCrumb from '../../components/BreadCrumb';
+import OrderCard from '../../components/Orders/OrderCard'
 
 import { connect } from 'react-redux';
 import { fetchPurchases } from '../../redux/actions/purchaseAction'
@@ -32,15 +33,7 @@ class Purchase extends Component {
           <div className="row">
             {items.purchases && items.purchases.map(purchase => {
               return (
-                <ul key={purchase.id} className="col-lg-3">
-                  <li>id: {purchase.id}</li>
-                  <li>buy date: {purchase.created_date}</li>
-                  <li>total: {purchase.total}</li>
-                  <li>user id: {purchase.buyer_id}</li>
-                  <li>status id: {purchase.status_id}</li>
-                  <li>update date: {purchase.updated_date}</li>
-                  <hr />
-                </ul>
+                <OrderCard key={purchase.id} purchase={purchase} />
               );
             })}
           </div>
