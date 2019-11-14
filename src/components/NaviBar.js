@@ -116,7 +116,10 @@ export default class NaviBar extends Component {
                 </button>
                   <div className="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="Dropdown4">
                     <h5>Quick Links</h5>
-                    <Link className="dropdown-item" to="/cart">Cart</Link> <Link className="dropdown-item" to="/wish_list">Wish List</Link> <Link className="dropdown-item" to="/checkout">Checkout</Link> </div>
+                    <Link className="dropdown-item" to="/cart">Cart</Link> <Link className="dropdown-item" to="/wish_list">Wish List</Link>
+                    <Link className="dropdown-item" to="/checkout">Checkout</Link>
+                    <Link className="dropdown-item" to="/purchases">Purchases</Link>
+                  </div>
                 </li>
 
               </ul>
