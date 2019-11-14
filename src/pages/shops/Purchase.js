@@ -5,18 +5,31 @@ import OrderCard from '../../components/Orders/OrderCard'
 
 import { connect } from 'react-redux';
 import { fetchPurchases } from '../../redux/actions/purchaseAction'
+import { setPurchaseStatus } from '../../redux/actions/purchaseAction'
 class Purchase extends Component {
   componentDidMount() {
     this.props.fetchPurchases();
   }
 
+  onSetStatus = (purchase_id, status) => {
+    console.log("change status of purchase: ", purchase_id, " to ", status);
+    this.props.setPurchaseStatus(purchase_id, status);
+  };
+
   static propsTypes = {
     fetchPurchases: PropTypes.func.isRequired,
+    setPurchaseStatus: PropTypes.func.isRequired,
     purchases: PropTypes.object.isRequired
   }
 
   render() {
-    const { isLoading, items, error } = this.props.purchases;
+    const { isLoading, items, isNewStatus, error } = this.props.purchases;
+    // let haveNewStatus = isNewStatus;
+    // if (haveNewStatus) {
+    //   console.log('purchase new status:', haveNewStatus)
+    //   this.props.fetchPurchases();
+    //   haveNewStatus = false;
+    // }
     if (isLoading) {
       console.log('purchases Loading:', isLoading)
       return (
@@ -31,9 +44,9 @@ class Purchase extends Component {
             </div>
           </div>
           <div className="row">
-            {items.purchases && items.purchases.map(purchase => {
+            {items && items.map(item => {
               return (
-                <OrderCard key={purchase.id} purchase={purchase} />
+                <OrderCard key={item.purchase.id} item={item} onSetStatus={this.onSetStatus} />
               );
             })}
           </div>
@@ -47,4 +60,4 @@ const mapStateToProps = state => ({
   purchases: state.purchase
 });
 
-export default connect(mapStateToProps, { fetchPurchases })(Purchase)
+export default connect(mapStateToProps, { fetchPurchases, setPurchaseStatus })(Purchase)
