@@ -51,9 +51,6 @@ export default function (state = initialState, action) {
     case NEW_STATUS:
       return {
         ...state,
-        // items: state.purchase.items.map(item => {
-        //   item.status = action.payload.status
-        // }),
         isNewStatus: true
       }
     default:

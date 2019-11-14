@@ -90,7 +90,7 @@ export const placeOrder = (buyer_id, cart_items) => async dispatch => {
 export const setNewStatus = (purchase_id, status) => {
   return {
     type: NEW_STATUS,
-    payload: { id: purchase_id, new_status: status }
+    payload: { 'id': purchase_id, 'new_status': status }
   }
 }
 
