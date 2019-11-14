@@ -159,10 +159,6 @@ class ProductCard2 extends Component {
   }
 }
 
-// ProductCard2.propsTypes = {
-
-// };
-
 export default connect(
   null,
   { addToCart }

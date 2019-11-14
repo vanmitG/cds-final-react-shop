@@ -1,12 +1,13 @@
-import { ADD_PURCHASE, FETCH_PURCHASE_REQUEST, FETCH_PURCHASE_FAILURE, FETCH_PURCHASE_SUCCESS, FETCH_PURCHASES, FETCH_PURCHASE, EDIT_PURCHASE } from '../actions/types';
+import { ADD_PURCHASE, FETCH_PURCHASE_REQUEST, FETCH_PURCHASE_FAILURE, FETCH_PURCHASES, FETCH_PURCHASE, EDIT_PURCHASE, NEW_STATUS } from '../actions/types';
 
 const initialState = {
   isLoading: true,
   isNewItem: false,
+  isNewStatus: false,
   error: '',
   // purchases
-  items: {},
-  // purchase
+  items: [],
+  // single purchase
   item: {},
   new_item: {}
 }
@@ -24,7 +25,7 @@ export default function (state = initialState, action) {
         isLoading: false,
         error: action.payload,
         item: {},
-        items: {},
+        items: [],
         new_item: {}
       }
     case ADD_PURCHASE:
@@ -44,7 +45,13 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isLoading: false,
+        isNewStatus: false,
         items: action.payload
+      }
+    case NEW_STATUS:
+      return {
+        ...state,
+        isNewStatus: true
       }
     default:
       return state
